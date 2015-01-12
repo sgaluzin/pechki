@@ -1,0 +1,48 @@
+html, body{
+  height: 100%;
+  font-size: 13px;
+  color: #fff;
+  @media only screen and (max-width: 992px) {
+    font-size: 14px;
+  }
+}
+html,
+button,
+input,
+select,
+textarea,
+.pure-g [class *= "pure-u"] {
+  font-family: 'Open Sans', helvetica, arial;
+}
+
+::selection {
+  background: @primary-clr;
+  color: #fff;
+}
+
+.link{
+  color: #fff;
+  text-decoration: none;
+}
+
+.horiz-menu{
+  margin: 0;
+  padding: 0;
+  vertical-align: middle;
+  .item{
+    display: inline-block;
+  }
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  max-width: @max-content-width;
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 0;
+  @media only screen and (max-width: @max-content-width + @desk-padding*2) {
+    padding: 0 @desk-padding;
+  }
+}

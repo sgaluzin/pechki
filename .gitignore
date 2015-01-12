@@ -7,3 +7,4 @@
 /joomla/cache
 /joomla/bin
 /joomla/tmp
+*/.idea/*

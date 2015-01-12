@@ -1,9 +1,9 @@
 /nbproject/private/
 /nbproject
-/images
-/includes
-/logs
-/cli
-/cache
-/bin
-/tmp
+/joomla/images
+/joomla/includes
+/joomla/logs
+/joomla/cli
+/joomla/cache
+/joomla/bin
+/joomla/tmp

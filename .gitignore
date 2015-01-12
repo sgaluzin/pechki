@@ -1,4 +1,7 @@
 /nbproject/*
+*/nbproject/*
+/nbproject/private
+/nbproject
 /joomla/images
 /joomla/includes
 /joomla/logs

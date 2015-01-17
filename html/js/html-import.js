@@ -22,6 +22,12 @@ $(document).ready(function () {
             $('.grid-product').append(gridProdHtml);
         }
     }
+    if ($.inArray('grid-brand-item', components)) {
+        for (var i = 0; i < 15; i++) {
+            var gridBrandHtml = $($(components['grid-brand-item']).html());
+            $('.grid-brand').append(gridBrandHtml);
+        }
+    }
 
 
 }, false);

@@ -13,4 +13,5 @@
 @import "components/filter.less";
 @import "components/table.less";
 @import "components/pagination.less";
+@import "components/product.less";
 @import "template.less";

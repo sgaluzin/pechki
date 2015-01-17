@@ -15,15 +15,18 @@ html, body{
   background: #f9f6ef;
   color: @primary-clr;
 }
-h1,h2{
+h1,h2,h3{
   text-transform: uppercase;
 }
 h1{
   font-size: 1.5em;
-  margin: .2em 0;
+  margin: .2em 0 1em;
 }
 h2{
   font-size: 1.2em;
+}
+h3{
+  font-size: 1.1em;
 }
 ol{
   padding-left: 18px;
@@ -174,10 +177,10 @@ input[type=text], select{
 .rating{
   color: #ffb400;
   span{
-    font-size: 12px;
+    font-size: 11px;
     &:before{
       color: #ffb400;
-      font-size: 12px;
+      font-size: 11px;
     }
   }
   &.r-1{
@@ -225,4 +228,16 @@ input[type=text], select{
       }
     }
   }
+}
+
+h1 .rating{
+  top: -9px;
+  position: relative;
+  display: inline-block;
+  font-weight: 400;
+
+}
+
+header h1{
+  margin-bottom: .2em;
 }

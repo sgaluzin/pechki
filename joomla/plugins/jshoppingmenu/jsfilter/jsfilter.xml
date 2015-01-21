@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="2.5" type="plugin" group="jshoppingmenu" method="upgrade">
+	<name>JoomShopping - Smart Filter</name>
+	<author>Bass [support@joomshopping.pro]</author>
+	<creationDate>2014</creationDate>
+	<copyright>Copyright (C). All rights reserved.</copyright>
+	<license></license>
+	<authorEmail>support@joomshopping.pro</authorEmail>
+	<authorUrl>joomshopping.pro</authorUrl>
+	<version>2.3</version>
+	<description>PJSF_DESC</description>
+
+	<scriptfile>install.php</scriptfile>
+	
+	<languages>
+		<language tag="ru-RU">language/ru-RU/ru-RU.plg_jshoppingmenu_jsfilter.sys.ini</language>
+	</languages>
+	
+	<files>
+		<filename plugin="jsfilter">jsfilter.php</filename>
+		<filename>index.html</filename>
+	</files>
+	
+</extension>

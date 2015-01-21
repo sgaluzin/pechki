@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="2.5" client="site" method="upgrade">
+	<name>JoomShopping.pro Smart Filter</name>
+	<author>Bass [support@joomshopping.pro]</author>
+	<creationDate>2014</creationDate>
+	<authorEmail>support@joomshopping.pro</authorEmail>
+	<authorUrl>http://joomshopping.pro</authorUrl>
+	<license></license>
+	<copyright>JoomShopping.pro. All rights reserved.</copyright>
+	<version>2.3</version>
+	<description>MJSF_DESC</description>
+	
+	<files>
+		<filename module="mod_jsfilter">mod_jsfilter.php</filename>
+		<folder>tmpl</folder>
+		<folder>assets</folder>
+		<folder>helper</folder>
+		<filename>index.html</filename>
+		<filename>mod_jsfilter.xml</filename>
+	</files>
+	
+	<languages folder="language">
+		<language tag="ru-RU">ru-RU/ru-RU.mod_jsfilter.ini</language>
+		<language tag="ru-RU">ru-RU/ru-RU.mod_jsfilter.sys.ini</language>
+	</languages>
+
+	<scriptfile>install.php</scriptfile>
+
+	<config>
+		<fields name="params">
+			<fieldset
+				name="advanced">
+				<field
+					name="moduleclass_sfx"
+					type="text"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+			</fieldset>
+		</fields>
+	</config>
+
+</extension>

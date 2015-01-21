@@ -1,0 +1,42 @@
+.aside{
+  float: left;
+  .block{
+    width: 200px;
+    margin: 0 0 10px;
+    .border(1px, @border-clr);
+    .header{
+      padding-left: 34px;
+      background: #f1eadc;
+      .border-bottom(1px, @border-clr);
+      font-weight: 600;
+      text-transform: uppercase;
+      line-height: 45px;
+    }
+    .vertical-menu{
+      margin: .8em 0;
+      .item{
+        .link{
+          display: inline-block;
+          padding: .4em 34px;
+          text-transform: uppercase;
+          color: #373330;
+          &.discount{
+            position: relative;
+            font-weight: 600;
+            color: @active-clr;
+            .icon{
+              position: absolute;
+              top: 5px;
+              display: inline-block;
+              width: 22px;
+              height: 22px;
+              margin-left: 6px;
+              background: url(../img/icon-discount.png) no-repeat;
+              line-height: 22px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

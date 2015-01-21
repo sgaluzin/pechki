@@ -13,9 +13,9 @@ class JConfig {
 	public $debug_lang = '0';
 	public $dbtype = 'mysqli';
 	public $host = 'localhost';
-	public $user = 'dev1';
-	public $password = 'EzMqWiALsSyIJ7kR';
-	public $db = 'dev1';
+	public $user = 'cs21439_pechki';
+	public $password = 'DFfwfsdf42fhh';
+	public $db = 'cs21439_pechki';
 	public $dbprefix = 'ujv8y_';
 	public $live_site = '';
 	public $secret = 'GWG4yDponRTFTjYM';
@@ -54,8 +54,8 @@ class JConfig {
 	public $sef_suffix = '0';
 	public $unicodeslugs = '0';
 	public $feed_limit = '10';
-	public $log_path = '/home/clients/ftp0/domains/dev1.wwwlab.biz/html/joomla/logs';
-	public $tmp_path = '/home/clients/ftp0/domains/dev1.wwwlab.biz/html/joomla/tmp';
+	public $log_path = '/home/c/cs21439/public_html/joomla/logs';
+	public $tmp_path = '/home/c/cs21439/public_html/joomla/tmp';
 	public $lifetime = '15';
 	public $session_handler = 'database';
 }

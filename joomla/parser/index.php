@@ -74,7 +74,7 @@
             return $product;
         }
 
-        function getProductsLinks($url) {
+        function getProductsLinks($url) { 
             $page = file_get_contents($url);
             preg_match_all('/<a[^>]*class="[^"]*b-pager__link_pos_last[^"]*"[^>]*href="([^"]*)"[^>]*>/sUi', $page, $matches);
             $next_url = "http://dev1.wwwlab.biz/proxy.php?url=http://pechiikamini.ru{$matches[1][0]}";
@@ -202,7 +202,7 @@
                 //images
                 foreach ($product->images as $key => $image) {
                     $file_name = end(explode("/", $image));
-                    file_put_contents(dirname(__FILE__) . '/../components/com_jshopping/files/img_products/' . 'full_' . $file_name, file_get_contents('http://dev1.wwwlab.biz/proxy.php?url=' . $image));
+                    file_put_contents(dirname(__FILE__) . '/../components/com_jshopping/files/img_products/' . 'full_' . $file_name, file_get_contents($image));
                     imageresize(dirname(__FILE__) . '/../components/com_jshopping/files/img_products/' . $file_name, dirname(__FILE__) . '/../components/com_jshopping/files/img_products/' . 'full_' . $file_name, 200);
                     imageresize(dirname(__FILE__) . '/../components/com_jshopping/files/img_products/' . 'thumb_' . $file_name, dirname(__FILE__) . '/../components/com_jshopping/files/img_products/' . 'full_' . $file_name, 100);
                     $insert = array( 
@@ -326,10 +326,13 @@
         }
 
         require_once(dirname(__FILE__) . '/mysql.class.php');
+//        require_once(dirname(__FILE__) . '/curl.class.php');
         require_once(dirname(__FILE__) . '/../configuration.php');
         $jconf = new jConfig();
         $db = new mysqldb($jconf->db, $jconf->host, $jconf->user, $jconf->password, $jconf->dbprefix);
         $res = $db->query("SET NAMES utf8");
+        
+//        $curl = new Curl();
 
 
 //        $url = 'http://pechiikamini.ru/g247686-pechi-kaminy';

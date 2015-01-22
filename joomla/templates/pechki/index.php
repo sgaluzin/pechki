@@ -14,6 +14,7 @@ $doc             = JFactory::getDocument();
 $user            = JFactory::getUser();
 $this->language  = $doc->language;
 $this->direction = $doc->direction;
+$components_url = 'templates/'.$this->template.'/components/';
 
 // Getting params from template
 $params = $app->getTemplate(true)->params;
@@ -39,8 +40,12 @@ else
 JHtml::_('bootstrap.framework');
 $doc->addScript('templates/' . $this->template . '/js/template.js');
 
+//$doc->addScript('templates/' . $this->template . '/js/less.js');
+
+
 // Add Stylesheets
-$doc->addStyleSheet('templates/' . $this->template . '/css/template.css');
+//$doc->addStyleSheet('templates/' . $this->template . '/css/template.css');
+//$doc->addStyleSheet('templates/' . $this->template . '/css/main.css');
 
 // Load optional RTL Bootstrap CSS
 JHtml::_('bootstrap.loadCss', false, $this->direction);
@@ -81,6 +86,7 @@ else
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $this->language; ?>" lang="<?php echo $this->language; ?>" dir="<?php echo $this->direction; ?>">
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet/less" href="/joomla/templates/pechki/css/main.less" type="text/css">
 	<jdoc:include type="head" />
 	<?php // Use of Google Font ?>
 	<?php if ($this->params->get('googleFont')) : ?>
@@ -93,32 +99,11 @@ else
 	<?php endif; ?>
 	<?php // Template color ?>
 	<?php if ($this->params->get('templateColor')) : ?>
-	<style type="text/css">
-		body.site
-		{
-			border-top: 3px solid <?php echo $this->params->get('templateColor'); ?>;
-			background-color: <?php echo $this->params->get('templateBackgroundColor'); ?>
-		}
-		a
-		{
-			color: <?php echo $this->params->get('templateColor'); ?>;
-		}
-		.navbar-inner, .nav-list > .active > a, .nav-list > .active > a:hover, .dropdown-menu li > a:hover, .dropdown-menu .active > a, .dropdown-menu .active > a:hover, .nav-pills > .active > a, .nav-pills > .active > a:hover,
-		.btn-primary
-		{
-			background: <?php echo $this->params->get('templateColor'); ?>;
-		}
-		.navbar-inner
-		{
-			-moz-box-shadow: 0 1px 3px rgba(0, 0, 0, .25), inset 0 -1px 0 rgba(0, 0, 0, .1), inset 0 30px 10px rgba(0, 0, 0, .2);
-			-webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, .25), inset 0 -1px 0 rgba(0, 0, 0, .1), inset 0 30px 10px rgba(0, 0, 0, .2);
-			box-shadow: 0 1px 3px rgba(0, 0, 0, .25), inset 0 -1px 0 rgba(0, 0, 0, .1), inset 0 30px 10px rgba(0, 0, 0, .2);
-		}
-	</style>
 	<?php endif; ?>
 	<!--[if lt IE 9]>
 		<script src="<?php echo $this->baseurl; ?>/media/jui/js/html5.js"></script>
 	<![endif]-->
+
 </head>
 
 <body class="site <?php echo $option
@@ -128,9 +113,17 @@ else
 	. ($itemid ? ' itemid-' . $itemid : '')
 	. ($params->get('fluidContainer') ? ' fluid' : '');
 ?>">
-
 	<!-- Body -->
-	<div class="body">
+	<div class="wrap-main">
+        <?php ?>
+        <header id="header" class="header-main">
+            <?php include_once($components_url.'header.php'); ?>
+        </header>
+        <main class="main container">
+            <div id="aside" class="aside">
+                <?php include_once($components_url.'aside.php'); ?>
+            </div>
+            <div class="content">
 		<div class="container<?php echo ($params->get('fluidContainer') ? '-fluid' : ''); ?>">
 			<!-- Header -->
 			<header class="header" role="banner">
@@ -178,23 +171,18 @@ else
 					</div>
 				<?php endif; ?>
 			</div>
-		</div>
-	</div>
+		    </div>
+		    </div><!-- End 'content' -->
+        </main>
+	</div><!-- End 'wrap-main' -->
 	<!-- Footer -->
-	<footer class="footer" role="contentinfo">
-		<div class="container<?php echo ($params->get('fluidContainer') ? '-fluid' : ''); ?>">
-			<hr />
-			<jdoc:include type="modules" name="footer" style="none" />
-			<p class="pull-right">
-				<a href="#top" id="back-top">
-					<?php echo JText::_('TPL_PROTOSTAR_BACKTOTOP'); ?>
-				</a>
-			</p>
-			<p>
-				&copy; <?php echo date('Y'); ?> <?php echo $sitename; ?>
-			</p>
-		</div>
+	<footer class="footer-main" role="contentinfo">
+
 	</footer>
 	<jdoc:include type="modules" name="debug" style="none" />
+
+    <script>less = { env: 'development'};</script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.2.0/less.min.js"></script>
+    <script>less.watch();</script>
 </body>
 </html>

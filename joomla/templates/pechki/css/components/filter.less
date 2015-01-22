@@ -1,0 +1,80 @@
+.filter{
+  position: relative;
+  margin: 10px 0;
+  padding: 20px 100px 20px 0;
+  .border(@border-clr);
+  background: #f5f0e5;
+  .button-primary{
+    position: absolute;
+    right: 20px;
+  }
+}
+.label-wrap{
+  display: inline-block;
+  margin-bottom: 10px;
+  padding-left: 16px;
+  .label{
+    padding-right: 8px;
+    &.required{
+      position: relative;
+      &:after{
+        position: relative;
+        top:4px;
+        content: "*";
+        font-size: 1.3em;
+        color: @active-clr;
+
+      }
+    }
+  }
+  select{
+    min-width: 100px;
+  }
+  @w: 50px;
+  .w1{
+    width: @w;
+  }
+  .w2{
+    width: 2*@w;
+  }
+  .w3{
+    width: 3*@w;
+  }
+  .w4{
+    width: 4*@w;
+  }
+  .w5{
+    width: 5*@w;
+  }
+  .w6{
+    width: 6*@w;
+  }
+  .w7{
+    width: 6*@w;
+  }
+  .w8{
+    width: 6*@w;
+  }
+  .w9{
+    width: 6*@w;
+  }
+}
+.check-block{
+  display: block;
+  margin: 10px 0 15px;
+  input{
+    display: inline-block;
+    float: left;
+    margin-top: 4px;
+  }
+  .label{
+    padding-left: 15px;
+    display: inline-block;
+    .title{
+      text-transform: uppercase;
+    }
+    p{
+      margin: 0;
+    }
+  }
+}

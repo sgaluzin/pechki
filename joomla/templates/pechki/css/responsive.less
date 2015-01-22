@@ -1,0 +1,125 @@
+@media all and (max-width: 1160px) {
+  /*header*/
+  .header-main .social{
+    display: none;
+  }
+}
+@media all and (max-width: (@max-content-width + @desk-padding*2)) {
+  .container{
+    padding: 0 @desk-padding;
+    &.main{
+      padding-top: 10px;
+    }
+  }
+  /*header*/
+  .header-main .call-back .minor{
+    display: none !important;
+  }
+
+/*content*/
+  .main{
+    .aside{
+      width: 20%;
+      .block{
+        width: 100%;
+      }
+    }
+    .content{
+      width: 80%;
+      padding-left: 20px;
+      box-sizing: border-box;
+    }
+  }
+
+  .product .image-block .image-list .item{
+    width: 25%;
+    margin: -1px 0 0;
+  }
+}
+
+@media all and (max-width: 1040px) {
+  /*header*/
+  .header-main {
+    .middle {
+      .contacts{
+        display: none;
+      }
+    }
+  }
+  .header-main .bottom{
+    &:after{
+      height: 56px;
+    }
+    .horiz-menu .item .label{
+      height: 56px;
+      line-height: 18px;
+      box-sizing: border-box;
+      span{
+        padding: 10px;
+        box-sizing: border-box;
+      }
+    }
+  }
+
+  .grid-brand .item-wrap{
+    width: 25%;
+  }
+  .grid-product .item-wrap{
+    width: 33.333%;
+  }
+}
+@media all and (max-width: 880px) {
+  /*header*/
+  .header-main {
+    .search-wrap{
+      display: none;
+    }
+    .middle {
+      .slogan{
+        margin-left: 100px;
+        padding: 13px 45px 18px 40px;
+        font-size: 1.2em;
+        background-size: contain;
+      }
+      .cart-wrap{
+        top: 16px;
+      }
+    }
+    .middle-row .call-back .button-primary{
+      font-size: 100%;
+    }
+  }
+/*content*/
+  .main{
+    .aside {
+      margin-top: 10px;
+      width: 100%;
+      .menu{
+        .horiz-menu;
+        .item{
+          width: 19%;
+          text-align: center;
+          padding: .4em 0;
+          .link{
+            padding: .4em .6em;
+          }
+          &.stock{
+            display: inline-block;
+          }
+        }
+      }
+      .header{
+        display: none;
+      }
+      .minor{
+        display: none;
+      }
+    }
+    .content{
+      width: 100%;
+      padding-left: 0;
+    }
+  }
+
+
+}

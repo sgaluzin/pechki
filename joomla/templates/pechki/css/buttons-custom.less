@@ -1,0 +1,83 @@
+[class*="button"], .btn {
+  -webkit-touch-callout: none; /* prevent callout to copy image, etc when tap to hold */
+  -webkit-text-size-adjust: none; /* prevent webkit from resizing text to fit */
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0); /* prevent tap highlight color / shadow */
+  -webkit-user-select: none; /* prevent copy paste, to allow, change 'none' to 'text' */
+}
+
+.button-wrap {
+  display: inline-block;
+  padding: 6px 4px;
+}
+
+.pure-button{
+  font-weight: 600;
+  .border-radius(2px);
+}
+
+.pure-button i{
+  padding-right: 6px;
+  font-size: 1.2em;
+}
+
+.button-primary {
+  position: relative;
+  padding: .5em 1em;
+ // font-size: 0.8em;
+  color: #fff;
+  background: @active-clr;
+  &.button-large, &.button-xlarge{
+    &:after{
+      height: 5px;
+    }
+  }
+  &.button-xxlarge:after{
+    height: 6px;
+  }
+}
+
+.button-flat {
+  padding: 0.75em 1.5em;
+  border: 2px solid fade(#fff,50%);
+  background: rgba(0,0,0,.25);
+  color: #fff;
+  font-size: 0.8em;
+  &.button-xlarge{
+    font-weight: 400;
+  }
+  &.light{
+    background: rgba(255,255,255,.05);
+  }
+}
+
+.button-xsmall {
+  font-size: 70%;
+}
+
+.button-small {
+  font-size: 85%;
+}
+
+.button-large{
+  font-size: 100%;
+  padding: 1em 2em;
+}
+
+.button-xlarge {
+  font-size: 110%;
+  padding: .4em 1em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.button-xxlarge {
+  font-size: 120%;
+  padding: 1.2em 4em;
+  text-transform: uppercase;
+}
+
+
+
+
+
+

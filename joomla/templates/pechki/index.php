@@ -157,10 +157,10 @@ else
 				<?php endif; ?>
 				<main id="content" role="main" class="<?php echo $span; ?>">
 					<!-- Begin Content -->
-					<jdoc:include type="modules" name="position-3" style="xhtml" />
+					<jdoc:include type="modules" name="position-3" style="no" />
 					<jdoc:include type="message" />
 					<jdoc:include type="component" />
-					<jdoc:include type="modules" name="position-2" style="none" />
+					<jdoc:include type="modules" name="position-2" style="no" />
 					<!-- End Content -->
 				</main>
 				<?php if ($this->countModules('position-7')) : ?>

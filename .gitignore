@@ -7,3 +7,5 @@
 /joomla/bin/*
 /joomla/tmp/*
 */.idea/*
+.idea/*
+*/administrator/*

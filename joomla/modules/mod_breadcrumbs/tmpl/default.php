@@ -15,14 +15,7 @@ JHtml::_('bootstrap.tooltip');
 
 <ul class="breadcrumb<?php echo $moduleclass_sfx; ?>">
 	<?php
-	if ($params->get('showHere', 1))
-	{
-		echo '<li class="active">' . JText::_('MOD_BREADCRUMBS_HERE') . '&#160;</li>';
-	}
-	else
-	{
-		echo '<li class="active"><span class="divider icon-location"></span></li>';
-	}
+
 
 	// Get rid of duplicated entries on trail including home page when using multilanguage
 	for ($i = 0; $i < $count; $i++)
@@ -47,19 +40,14 @@ JHtml::_('bootstrap.tooltip');
 	if ($key != $last_item_key)
 	{
 		// Render all but last item - along with separator
-		echo '<li>';
+		echo '<li class="item">';
 		if (!empty($item->link))
 		{
-			echo '<a href="' . $item->link . '" class="pathway">' . $item->name . '</a>';
+			echo '<a href="' . $item->link . '" class="link"><span class="label">' . $item->name . '</span></a>';
 		}
 		else
 		{
-			echo '<span>' . $item->name . '</span>';
-		}
-
-		if (($key != $penult_item_key) || $show_last)
-		{
-			echo '<span class="divider">' . $separator . '</span>';
+			echo '<span class="label">' . $item->name . '</span>';
 		}
 
 		echo '</li>';
@@ -67,8 +55,8 @@ JHtml::_('bootstrap.tooltip');
 	elseif ($show_last)
 	{
 		// Render last item if reqd.
-		echo '<li class="active">';
-		echo '<span>' . $item->name . '</span>';
+		echo '<li class="item active">';
+		echo '<span class="label">' . $item->name . '</span>';
 		echo '</li>';
 	}
 	endforeach; ?>

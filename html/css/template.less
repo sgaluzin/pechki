@@ -20,7 +20,7 @@ h1,h2,h3{
 }
 h1{
   font-size: 1.5em;
-  margin: .2em 0 1em;
+  margin: .3em 0 1em;
 }
 h2{
   font-size: 1.2em;
@@ -44,7 +44,12 @@ textarea,
   background: @active-clr;
   color: #fff;
 }
-
+a{
+  color: @active-clr;
+  &:hover{
+    text-decoration: none;
+  }
+}
 .link{
   color: @primary-clr;
   text-decoration: none;
@@ -54,9 +59,13 @@ textarea,
   }
 }
 
-input[type=text], select{
+input[type=text], select, textarea{
   .border(@border-clr);
   padding: .15em .6em;
+}
+textarea{
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .horiz-menu{
@@ -139,7 +148,7 @@ input[type=text], select{
   }
 }
 
-.crumbs{
+.breadcrumb, .crumbs{
   padding-top: 10px;
   .horiz-menu;
   .item{
@@ -151,6 +160,9 @@ input[type=text], select{
       .label{
         text-decoration: underline;
         color: #373330;
+        &:hover{
+          text-decoration: none;
+        }
       }
       &:after{
         content: ">";

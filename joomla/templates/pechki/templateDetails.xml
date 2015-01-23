@@ -42,7 +42,15 @@
 		<position>position-12</position>
 		<position>position-13</position>
 		<position>position-14</position>
-		<position>footer</position>
+        <position>aside-first</position>
+        <position>aside-second</position>
+        <position>bread-crumbs</position>
+        <position>header-menu-top</position>
+        <position>header-menu-bottom</position>
+        <position>filter</position>
+        <position>footer</position>
+        <position>search-top</position>
+        <position>slider</position>
 	</positions>
 	<languages folder="language">
 		<language tag="en-GB">en-GB/en-GB.tpl_protostar.ini</language>

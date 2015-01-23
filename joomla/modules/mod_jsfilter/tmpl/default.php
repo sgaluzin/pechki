@@ -10,7 +10,6 @@
 defined('_JEXEC') or die;
 
 
-JHtml::_('stylesheet', JURI::root().'modules/mod_jsfilter/assets/layout/'.$cfg['layout'].'/style.css');
 JHtml::_('script', JURI::root().'modules/mod_jsfilter/assets/jsfilter.js' );
 
 ?>
@@ -80,7 +79,7 @@ JHtml::_('script', JURI::root().'modules/mod_jsfilter/assets/jsfilter.js' );
 </div>
 
 
-<div id="jsfilter_<?php echo $module->id; ?>" class="sf_wrapper">
+<div id="jsfilter_<?php echo $module->id; ?>" class="filter sf_wrapper">
 
 	<div class="sf_container<?php echo ( (int)$cfg['mod_direction'] ) ? ' sf_inline' : ''; ?>">
 		<?php
@@ -98,10 +97,7 @@ JHtml::_('script', JURI::root().'modules/mod_jsfilter/assets/jsfilter.js' );
 			<?php echo $html; ?>
 
 			<?php if (!isset($cfg['show_buttons']) || $cfg['show_buttons']) { ?>
-			<div class="sf_buttons">		
-				<input type="submit" value="Показать" class="sf_submit" />
-				<input type="reset" value="Сбросить" class="sf_reset" />
-			</div>
+				<input type="submit" value="Искать" class="pure-button button-primary" />
 			<?php } ?>
 			<input id="sf_orderby" type="hidden" name="sf_orderby" value="" />
 			<input id="sf_order" type="hidden" name="sf_order" value="" />

@@ -31,8 +31,7 @@ defined('_JEXEC') or die('Restricted access');
         <?var_dump($product->product_manufacturer_id)?>
     </td>
     <td class="model">
-        <?//var_dump($product)?>
-        <span class="top">печ-камин</span>
+        <span class="top"><?=$product->category_id?></span>
         <span class="title"><?=$product->name?></span>
 
         <div class="bottom">

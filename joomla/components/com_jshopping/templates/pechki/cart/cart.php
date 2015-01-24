@@ -13,38 +13,25 @@ defined('_JEXEC') or die('Restricted access');
 <form action="<?php print SEFLink('index.php?option=com_jshopping&controller=cart&task=refresh')?>" method="post" name="updateCart">
 <?php print $this->_tmp_ext_html_cart_start?>
 <?php if ($countprod>0){?>
-<table class="jshop cart">
-  <tr>
-    <th width="20%">
-      <?php print _JSHOP_IMAGE?>
-    </th>
-    <th>
-      <?php print _JSHOP_ITEM?>
-    </th>    
-    <th width="15%">
-      <?php print _JSHOP_SINGLEPRICE?>
-    </th>
-    <th width="15%">
-      <?php print _JSHOP_NUMBER?>
-    </th>
-    <th width="15%">
-      <?php print _JSHOP_PRICE_TOTAL?>
-    </th>
-    <th width="10%">
-      <?php print _JSHOP_REMOVE?>
-    </th>
-  </tr>
-  <?php 
+<table class="pure-table striped order">
+    <tr>
+        <th class="photo">Фото</th>
+        <th class="name">Наименование</th>
+        <th class="value">Количество</th>
+        <th class="price">Сумма</th>
+        <th class="action">Удалить</th>
+    </tr>
+  <?php
   $i=1;   
   foreach($this->products as $key_id=>$prod){
   ?> 
   <tr class="jshop_prod_cart <?php if ($i%2==0) print "even"; else print "odd"?>">
-    <td class="jshop_img_description_center">
+    <td class="photo">
       <a href="<?php print $prod['href']?>">
         <img src="<?php print $this->image_product_path ?>/<?php if ($prod['thumb_image']) print $prod['thumb_image']; else print $this->no_image; ?>" alt="<?php print htmlspecialchars($prod['product_name']);?>" class="jshop_img" />
       </a>
     </td>
-    <td class="product_name">
+    <td class="name">
         <a href="<?php print $prod['href']?>"><?php print $prod['product_name']?></a>
         <?php if ($this->config->show_product_code_in_cart){?>
         <span class="jshop_code_prod">(<?php print $prod['ean']?>)</span>
@@ -57,29 +44,19 @@ defined('_JEXEC') or die('Restricted access');
         <?php print sprintFreeExtraFiledsInCart($prod['extra_fields']);?>
         <?php print $prod['_ext_attribute_html']?>
     </td>
-    <td>
-        <?php print formatprice($prod['price'])?>
-        <?php print $prod['_ext_price_html']?>
-        <?php if ($this->config->show_tax_product_in_cart && $prod['tax']>0){?>
-            <span class="taxinfo"><?php print productTaxInfo($prod['tax']);?></span>
-        <?php }?>
-		<?php if ($this->config->cart_basic_price_show && $prod['basicprice']>0){?>
-            <div class="basic_price"><?php print _JSHOP_BASIC_PRICE?>: <span><?php print sprintBasicPrice($prod);?></span></div>
-        <?php }?>
+    <td class="value">
+          <input type = "text" name = "quantity[<?php print $key_id ?>]" value = "<?php print $prod['quantity'] ?>" class = "inputbox" style = "width: 25px" />
+          <?php print $prod['_qty_unit'];?>
+          <span class = "cart_reload"><img style="cursor:pointer" src="<?php print $this->image_path ?>images/reload.png" title="<?php print _JSHOP_UPDATE_CART ?>" alt = "<?php print _JSHOP_UPDATE_CART ?>" onclick="document.updateCart.submit();" /></span>
     </td>
-    <td>
-      <input type = "text" name = "quantity[<?php print $key_id ?>]" value = "<?php print $prod['quantity'] ?>" class = "inputbox" style = "width: 25px" />
-      <?php print $prod['_qty_unit'];?>
-      <span class = "cart_reload"><img style="cursor:pointer" src="<?php print $this->image_path ?>images/reload.png" title="<?php print _JSHOP_UPDATE_CART ?>" alt = "<?php print _JSHOP_UPDATE_CART ?>" onclick="document.updateCart.submit();" /></span>
-    </td>
-    <td>
+    <td class="price">
         <?php print formatprice($prod['price']*$prod['quantity']); ?>
         <?php print $prod['_ext_price_total_html']?>
         <?php if ($this->config->show_tax_product_in_cart && $prod['tax']>0){?>
             <span class="taxinfo"><?php print productTaxInfo($prod['tax']);?></span>
         <?php }?>
     </td>
-    <td>
+    <td class="action">
       <a href="<?php print $prod['href_delete']?>" onclick="return confirm('<?php print _JSHOP_CONFIRM_REMOVE?>')"><img src = "<?php print $this->image_path ?>images/remove.png" alt = "<?php print _JSHOP_DELETE?>" title = "<?php print _JSHOP_DELETE?>" /></a>
     </td>
   </tr>

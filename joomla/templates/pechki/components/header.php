@@ -54,7 +54,7 @@
             <p class="sub-title">продажа и установка
         </div>
         <div class="call-back">
-            <div class="pure-button button-primary button-xlarge">Закажите обратный звонок</div>
+            <div class="pure-button button-primary button-xlarge"><a href="#" class="callme_viewform">Закажите обратный звонок</a></div>
             <span class="text">Или звоните <span class="minor">прямо сейчас</span></span>
             <span class="phone">+7 (812) 918 39 74</span>
             <span class="text minor">или</span>

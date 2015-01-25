@@ -97,10 +97,14 @@
           position: absolute;
           top: 20px;
           right: -5px;
-          padding: 3px 7px;
-          background: @active-clr;
+          width: 20px;
+          height: 15px;
+          padding: 3px 0;
+          line-height: 15px;
           .border-radius(50px);
           font-size: .6em;
+          text-align: center;
+          background: @active-clr;
           color: #fff;
         }
       }
@@ -125,6 +129,8 @@
     background: #f9f6f1;
     .logo-name{
       float: left;
+      display: block;
+
       .title{
         margin: 4px 0 0;
         font: 400 1.5em Impact;
@@ -183,7 +189,7 @@
         float: left;
         width: 16.666%;
         z-index: 12;
-        &:hover .label{
+        &:hover .label, &.active .label{
           background: #453125;
         }
         .thumb{

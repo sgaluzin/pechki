@@ -35,7 +35,7 @@ $product = $this->product;
                     <ul class="image-list">
                 <?} else {?>
                     <li class="item">
-                        <a class="lightbox" id="main_image_full_<?php print $image->image_id?>" href="<?php print $this->image_product_path?>/<?php print $image->image_full;?>" <?php if ($k!=0){?>style="display:none"<?php }?> title="<?php print htmlspecialchars($image->_title)?>">
+                        <a class="lightbox" id="main_image_full_<?php print $image->image_id?>" href="<?php print $this->image_product_path?>/<?php print $image->image_full;?>" title="<?php print htmlspecialchars($image->_title)?>">
                             <img id = "main_image_<?php print $image->image_id?>" src = "<?php print $this->image_product_path?>/<?php print $image->image_name;?>" alt="<?php print htmlspecialchars($image->_title)?>" title="<?php print htmlspecialchars($image->_title)?>" />
                         </a>
                     </li>
@@ -46,7 +46,7 @@ $product = $this->product;
         <div class="info-block">
             <div class="top-row">
                 <div class="price">Цена: <span class="amount"><?php print formatprice($this->product->getPriceCalculate())?></span> <span class="metric"><?php print $this->product->_tmp_var_price_ext;?></span></div>
-                <div class="pure-button button-primary button-xlarge">Купить</div>
+                <input type="submit" class="pure-button button-primary button-xlarge" value="Купить" onclick="jQuery('#to').val('cart');" />
             </div>
             <p class="desc">
                 <?php
@@ -78,19 +78,11 @@ $product = $this->product;
         <?php print $this->product->description; ?>
     </div>
 
-    <input type="hidden" name="to" id='to' value="cart" />
+<input type="hidden" name="to" id='to' value="cart" />
 <input type="hidden" name="product_id" id="product_id" value="<?php print $this->product->product_id?>" />
 <input type="hidden" name="category_id" id="category_id" value="<?php print $this->category_id?>" />
 </form>
 
-<?php print $this->_tmp_product_html_before_demofiles; ?>
-<div id="list_product_demofiles"><?php include(dirname(__FILE__)."/demofiles.php");?></div>
-<?php
-if ($this->config->product_show_button_back){?>
-<div class="button_back">
-<input type="button" class="button" value="<?php print _JSHOP_BACK;?>" onclick="<?php print $this->product->button_back_js_click;?>" />
-</div>
-<?php }?>
 <?php
     print $this->_tmp_product_html_before_related;
     include(dirname(__FILE__)."/related.php");

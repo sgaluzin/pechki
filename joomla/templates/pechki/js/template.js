@@ -41,5 +41,36 @@
 				$("label[for=" + $(this).attr('id') + "]").addClass('active btn-success');
 			}
 		});
+        $('#comjshop')
+
+        var siteUrl = document.location.origin+'/joomla';
+        var productBigImg = $('.product .main-image img');
+        var productSmallImgs = $('.product .image-list img');
+        var catProductSmallImgs = $('.jshop_list_product .photo img');
+        if (productBigImg.length>0){
+            $("<img />").attr('src', productBigImg.attr('src'))
+                .bind('error',  function(ev){
+                    productBigImg.attr('src', siteUrl+ '/templates/pechki/img/default-image-big.png');
+                });
+        }
+        if (productSmallImgs.length>0) {
+            productSmallImgs.each(function(i, el){
+                $("<img />").attr('src', $(el).attr('src'))
+                    .bind('error',{'self' : el}, function(ev){
+                        var self = ev.data.self;
+                        $(self).attr('src', siteUrl+'/templates/pechki/img/default-image-small.png');
+                    });
+            });
+        }
+        if (catProductSmallImgs.length>0) {
+            catProductSmallImgs.each(function(i, el){
+                $("<img />").attr('src', $(el).attr('src'))
+                    .bind('error',{'self' : el}, function(ev){
+                        var self = ev.data.self;
+                        $(self).attr('src', siteUrl+'/joomla/templates/pechki/img/default-image-small.png');
+                    });
+            });
+        }
+
 	})
 })(jQuery);

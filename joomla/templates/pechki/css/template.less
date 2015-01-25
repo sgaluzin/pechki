@@ -53,10 +53,14 @@ a{
 .link{
   color: @primary-clr;
   text-decoration: none;
-  &:hover{
+  &:hover, &.active, &.active{
     text-decoration: none;
     color: @active-clr;
   }
+}
+&.active .link{
+  text-decoration: none;
+  color: @active-clr !important;
 }
 
 input[type=text], select, textarea{

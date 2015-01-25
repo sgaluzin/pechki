@@ -25,11 +25,13 @@ table.pure-table{
       text-align: center;
       font-size: .9em;
       &.photo{
+        font-size: 0;
         background: #fff;
-        width: 71px;
-        padding: 0.5em;
+        padding: 4px;
         img{
-          width: 100%;
+          min-width: 100%;
+          min-height: 100%;
+          max-width: 80px;
         }
       }
       &.action{
@@ -95,6 +97,7 @@ table.pure-table{
       }
     }
     tr{
+
       &.amount{
         td{
           background: #f9f6ee;
@@ -149,6 +152,9 @@ table.pure-table{
             }
           }
         }
+      }
+      td.photo{
+        width: 68px;
       }
     }
   }

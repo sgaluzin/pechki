@@ -4,8 +4,10 @@
     width: 200px;
     margin: 0 0 10px;
     .border(1px, @border-clr);
-    .header{
+    .header,.page-header{
+      margin: 0;
       padding-left: 34px;
+      font-size: 1rem;
       background: #f1eadc;
       .border-bottom(1px, @border-clr);
       font-weight: 600;
@@ -13,15 +15,17 @@
       line-height: 45px;
     }
     .menu{
-      margin: .8em 0;
-      padding: .4em 0;
       .vertical-menu;
+      margin: .6em 0;
       .item{
         .link{
           display: inline-block;
           padding: .4em 34px;
           text-transform: uppercase;
           color: #373330;
+          &:hover{
+            color: @active-clr;
+          }
         }
         &.discount .link{
           position: relative;

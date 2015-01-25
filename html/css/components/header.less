@@ -13,6 +13,8 @@
     height: 1.6em;
     .group;
     .nav-main{
+      position: relative;
+      z-index: 10;
       font-size: 1.1em;
       line-height: 1.6em;
       text-transform: uppercase;
@@ -45,6 +47,14 @@
           width: 16px;
           height: 16px;
           background: url(../img/icon-search.png) no-repeat;
+        }
+      }
+      &:hover{
+        .btn{
+          background: #94806f;
+        }
+        input{
+          border-color: #94806f;
         }
       }
     }
@@ -161,18 +171,27 @@
       height: 47px;
       background: #533e31;
       content: "";
+      z-index: 11;
     }
     .horiz-menu{
       position: relative;
-      z-index: 10;
+      z-index: 12;
       font-size: 0;
+      .group;
       .item{
+        display: block;
+        float: left;
         width: 16.666%;
+        z-index: 12;
+        &:hover .label{
+          background: #453125;
+        }
         .thumb{
           height: 156px;
+          background-size: contain !important;
         }
         &:nth-child(1) .thumb{
-          background: url(../img/menu/it-1.png) no-repeat center;
+          background: url(../img/menu/it-1.png) no-repeat  center;
         }
         &:nth-child(2) .thumb{
           background: url(../img/menu/it-2.png) no-repeat center;
@@ -190,13 +209,18 @@
           background: url(../img/menu/it-6.png) no-repeat center;
         }
         .label{
+          position: relative;
           font-size: 1rem;
-          line-height: 47px;
           border-left: 1px solid #715e51;
           text-transform: uppercase;
           text-align: center;
           font-weight: 600;
           color: #f9f6ef;
+          height: 47px;
+          span{
+            .full-center-align;
+            width: 100%;
+          }
         }
         &:last-child .label{
           border-right: 1px solid #715e51;

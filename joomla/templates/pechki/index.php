@@ -91,11 +91,6 @@ else
 	<?php // Use of Google Font ?>
 	<?php if ($this->params->get('googleFont')) : ?>
 		<link href='//fonts.googleapis.com/css?family=<?php echo $this->params->get('googleFontName'); ?>' rel='stylesheet' type='text/css' />
-		<style type="text/css">
-			h1,h2,h3,h4,h5,h6,.site-title{
-				font-family: '<?php echo str_replace('+', ' ', $this->params->get('googleFontName')); ?>', sans-serif;
-			}
-		</style>
 	<?php endif; ?>
 	<?php // Template color ?>
 	<?php if ($this->params->get('templateColor')) : ?>
@@ -124,60 +119,26 @@ else
                 <?php include_once($components_url.'aside.php'); ?>
             </div>
             <div class="content">
-		<div class="container<?php echo ($params->get('fluidContainer') ? '-fluid' : ''); ?>">
-			<!-- Header -->
-			<header class="header" role="banner">
-				<div class="header-inner clearfix">
-					<a class="brand pull-left" href="<?php echo $this->baseurl; ?>">
-						<?php echo $logo; ?>
-						<?php if ($this->params->get('sitedescription')) : ?>
-							<?php echo '<div class="site-description">' . htmlspecialchars($this->params->get('sitedescription')) . '</div>'; ?>
-						<?php endif; ?>
-					</a>
-					<div class="header-search pull-right">
-						<jdoc:include type="modules" name="position-0" style="none" />
-					</div>
-				</div>
-			</header>
-			<?php if ($this->countModules('position-1')) : ?>
-				<nav class="navigation" role="navigation">
-					<jdoc:include type="modules" name="position-1" style="none" />
-				</nav>
-			<?php endif; ?>
-			<jdoc:include type="modules" name="banner" style="xhtml" />
-			<div class="row-fluid">
-				<?php if ($this->countModules('position-8')) : ?>
-					<!-- Begin Sidebar -->
-					<div id="sidebar" class="span3">
-						<div class="sidebar-nav">
-							<jdoc:include type="modules" name="position-8" style="xhtml" />
-						</div>
-					</div>
-					<!-- End Sidebar -->
-				<?php endif; ?>
-				<main id="content" role="main" class="<?php echo $span; ?>">
-					<!-- Begin Content -->
-					<jdoc:include type="modules" name="position-3" style="no" />
-					<jdoc:include type="message" />
-					<jdoc:include type="component" />
-					<jdoc:include type="modules" name="position-2" style="no" />
-					<!-- End Content -->
-				</main>
-				<?php if ($this->countModules('position-7')) : ?>
-					<div id="aside" class="span3">
-						<!-- Begin Right Sidebar -->
-						<jdoc:include type="modules" name="position-7" style="well" />
-						<!-- End Right Sidebar -->
-					</div>
-				<?php endif; ?>
-			</div>
-		    </div>
+                <div class="container<?php echo ($params->get('fluidContainer') ? '-fluid' : ''); ?>">
+                    <header class="header" role="banner">
+                        <jdoc:include type="modules" name="bread-crumbs" style="no" />
+                        <h1><?=$doc->getTitle()?></h1>
+                        <jdoc:include type="modules" name="filter" style="no" />
+                        </div>
+                    </header>
+                    <jdoc:include type="modules" name="banner" style="xhtml" />
+                        <!-- Begin Content -->
+                        <jdoc:include type="modules" name="slider" style="no" />
+                        <jdoc:include type="message" />
+                        <jdoc:include type="component" />
+                        <!-- End Content -->
+                    </div>
 		    </div><!-- End 'content' -->
         </main>
 	</div><!-- End 'wrap-main' -->
 	<!-- Footer -->
 	<footer class="footer-main" role="contentinfo">
-
+        <?php include_once($components_url.'footer.php'); ?>
 	</footer>
 	<jdoc:include type="modules" name="debug" style="none" />
 

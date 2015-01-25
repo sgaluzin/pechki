@@ -19,10 +19,12 @@
         </ul>
     </div>
     -->
-    <?php if ($this->countModules('position-7')) : ?>
+    <?php if ($this->countModules('aside-first')) : ?>
         <div class="block">
             <jdoc:include type="modules" name="aside-first" style="well" />
         </div>
+    <?php endif; ?>
+    <?php if ($this->countModules('aside-second')) : ?>
         <div class="block minor">
             <jdoc:include type="modules" name="aside-second" style="well" />
         </div>

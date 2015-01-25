@@ -34,7 +34,7 @@ function sf_init (mid)
 		} else if (!isPopular) {
 			// Сворачиваемый блок
 			// Инициализация элемента для управления сворачиванием блока
-			head.click(sf_rollHandler);
+			//head.click(sf_rollHandler);
 		}
 	});
 

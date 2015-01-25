@@ -8,9 +8,21 @@
     }
     .link{
       text-decoration: underline;
+      &:hover{
+        text-decoration: none;
+      }
     }
     &.active{
       color: @active-clr;
+      text-decoration: none;
+      cursor: default;
+      .a{
+        text-decoration: none;
+        cursor: default;
+      }
+    }
+    &.disabled{
+      color: #9c827d;
     }
   }
 }

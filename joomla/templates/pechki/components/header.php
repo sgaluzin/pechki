@@ -2,12 +2,12 @@
 <div class="container">
     <div class="logo"></div>
     <div class="top">
-        <?php if ($this->countModules('position-7')) : ?>
+        <?php if ($this->countModules('search-top')) : ?>
             <div class="search-form right">
                 <jdoc:include type="modules" name="search-top" style="well" />
             </div>
         <?php endif; ?>
-        <?php if ($this->countModules('position-7')) : ?>
+        <?php if ($this->countModules('header-menu-top')) : ?>
             <nav class="nav-main right">
                 <jdoc:include type="modules" name="header-menu-top" style="well" />
             </nav>
@@ -102,7 +102,7 @@
                 </a>
             </li>
         </ul>-->
-        <?php if ($this->countModules('position-7')) : ?>
+        <?php if ($this->countModules('header-menu-bottom')) : ?>
             <jdoc:include type="modules" name="header-menu-bottom" style="well" />
         <?php endif; ?>
     </div>

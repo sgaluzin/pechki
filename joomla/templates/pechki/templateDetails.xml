@@ -45,6 +45,7 @@
         <position>aside-first</position>
         <position>aside-second</position>
         <position>bread-crumbs</position>
+        <position>cart-top</position>
         <position>header-menu-top</position>
         <position>header-menu-bottom</position>
         <position>filter</position>

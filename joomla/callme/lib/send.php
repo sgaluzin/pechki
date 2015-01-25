@@ -103,7 +103,7 @@ if ($interval < 1) { // интервал отправки (сек)
 		@$geo = file_get_contents ("http://freegeoip.net/json/".$ip);
 		@$geo = json_decode ($geo, true);
 
-		$title = "CallMe: обратный звонок";
+		$title = "Заказан обратный звонок";
 		$title = "=?UTF-8?B?".base64_encode($title)."?=";
 		$mess = "";
 
@@ -111,10 +111,10 @@ if ($interval < 1) { // интервал отправки (сек)
 
 		addToMess ("Откуда запрос", ($geo['city']." / ".$geo['country_name']." / ".$ip));
 
-		$mess = $mess."<hr><a href='http://dedushka.org/tag/callme/'>Следите</a> за обновлениями.<br>Спасибо за использование Callme.";
+		$mess = $mess."";
 		
 		$headers = "Content-type: text/html; charset=utf-8 \r\n"; 
-		$headers.= "From: Callme 2.1 <".$from.">\r\n"; 
+		$headers.= "From: <".$from.">\r\n"; 
 
 		$sms["msg"] = translit((getOptions(0)));
 		$sms["msg"] = substr($sms["msg"], 0, 160);

@@ -814,7 +814,7 @@ class JshoppingControllerJsfilter extends JshoppingControllerJsfilterBase
 		} else {
 			$result['error'] = '';
 			
-			$xml = simplexml_load_string($response);
+			$xml = simplexml_load_string($response); 
 			foreach ( $xml->children() as $el ) {
 				$result[$el->getName()] = trim( (string) $el );
 			}

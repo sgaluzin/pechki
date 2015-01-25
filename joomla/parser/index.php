@@ -74,7 +74,7 @@
             return $product;
         }
 
-        function getProductsLinks($url) { 
+        function getProductsLinks($url) {
             $page = file_get_contents($url);
             preg_match_all('/<a[^>]*class="[^"]*b-pager__link_pos_last[^"]*"[^>]*href="([^"]*)"[^>]*>/sUi', $page, $matches);
             $next_url = "http://dev1.wwwlab.biz/proxy.php?url=http://pechiikamini.ru{$matches[1][0]}";
@@ -205,7 +205,7 @@
                     file_put_contents(dirname(__FILE__) . '/../components/com_jshopping/files/img_products/' . 'full_' . $file_name, file_get_contents($image));
                     imageresize(dirname(__FILE__) . '/../components/com_jshopping/files/img_products/' . $file_name, dirname(__FILE__) . '/../components/com_jshopping/files/img_products/' . 'full_' . $file_name, 200);
                     imageresize(dirname(__FILE__) . '/../components/com_jshopping/files/img_products/' . 'thumb_' . $file_name, dirname(__FILE__) . '/../components/com_jshopping/files/img_products/' . 'full_' . $file_name, 100);
-                    $insert = array( 
+                    $insert = array(
                         'product_id' => $product_id,
                         'image_name' => $file_name,
                         'ordering' => 1
@@ -331,9 +331,19 @@
         $jconf = new jConfig();
         $db = new mysqldb($jconf->db, $jconf->host, $jconf->user, $jconf->password, $jconf->dbprefix);
         $res = $db->query("SET NAMES utf8");
-        
+
 //        $curl = new Curl();
 
+
+        $sql = "SELECT * FROM wle_jshopping_products";
+        $products = $db->fetchAll($sql);
+//        foreach ($products as $product) {
+//            if ( $product['product_price'] > 1000000  ) {
+//                echo $product['product_price'] . ' ' . $product['name_ru-RU'] . "<Br/>\n";
+//                $db->update('wle_jshopping_products', array('product_price' => str_replace('.', ',', (float)$product['product_price']/100)), 'product_id='.$product['product_id']);
+//            }
+//        }
+        exit;
 
 //        $url = 'http://pechiikamini.ru/g247686-pechi-kaminy';
         $url = 'http://dev1.wwwlab.biz/proxy.php?url=' . $_REQUEST['url'];

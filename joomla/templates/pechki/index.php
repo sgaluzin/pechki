@@ -122,7 +122,6 @@ else
                 <div class="container<?php echo ($params->get('fluidContainer') ? '-fluid' : ''); ?>">
                     <header class="header" role="banner">
                         <jdoc:include type="modules" name="bread-crumbs" style="no" />
-                        <h1><?=$doc->getTitle()?></h1>
                         <jdoc:include type="modules" name="filter" style="no" />
                         </div>
                     </header>
@@ -131,8 +130,9 @@ else
                         <jdoc:include type="modules" name="slider" style="no" />
                         <jdoc:include type="message" />
                         <jdoc:include type="component" />
+                        <jdoc:include type="modules" name="after-component" style="well" />
                         <!-- End Content -->
-                    </div>
+                    </div> 
 		    </div><!-- End 'content' -->
         </main>
 	</div><!-- End 'wrap-main' -->
@@ -144,7 +144,7 @@ else
 
     <script>less = { env: 'development'};</script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.2.0/less.min.js"></script>
-    <script>less.watch();</script>
+    <!--<script>less.watch();</script>-->
     <script type="text/javascript" charset="utf-8" src="/joomla/callme/js/callme.js"></script>
 </body>
 </html>

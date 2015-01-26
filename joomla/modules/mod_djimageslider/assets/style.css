@@ -44,6 +44,31 @@ span.load-button-active {
 	opacity: 0.8;
 	filter: alpha(opacity = 80);
 }
+.navigation-container{
+    top: 0!important;
+    height: 100%;
+}
+.prev-button, .next-button{
+    opacity: .8 !important;
+    top: 50%!important;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+.navigation-container:hover .prev-button, .navigation-container:hover .next-button{
+    opacity: 1 !important;
+}
+.prev-button{
+    left: 6px !important;
+}
+.next-button{
+    right: 6px !important;
+}
+.play-button, .pause-button{
+    display: none !important;
+}
+
 
 /*** image on the left and 100% height of description area ***/
 /*

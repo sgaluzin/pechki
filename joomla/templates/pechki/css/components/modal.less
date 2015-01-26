@@ -22,11 +22,23 @@
     color: @active-clr;
   }
   .body{
-    padding: 20px 30px;
+    padding: 10px 30px 20px;
     .group;
-    .label-wrap{
+    .cme-fields{
       padding: 0;
       width: 100%;
+    }
+    .label{
+      display: inline-block;
+      margin-top: 10px;
+
+      &:after {
+        position: relative;
+        top: 4px;
+        content: "*";
+        font-size: 1.3em;
+        color: #fe611e;
+      }
     }
     input,textarea{
       box-sizing: border-box;
@@ -42,5 +54,8 @@
     right: 10px;
     top: 8px;
     cursor: pointer;
+  }
+  .cme-btn-place span{
+    display: none;
   }
 }

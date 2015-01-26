@@ -235,9 +235,9 @@ eval(function(p,a,c,k,e,d){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a
 			} 
 			// если слишком близко к верху страницы
 			
-			cmeForm.css('left', lf_cr);
-			cmeForm.css('top', tp_cr);
-			jQuery('#cme-back').css('height', jQuery(document).height());
+			//cmeForm.css('left', lf_cr);
+			//cmeForm.css('top', tp_cr);
+			//jQuery('#cme-back').css('height', jQuery(document).height());
 			jQuery('#cme-back').fadeToggle('fast');
 			cmeForm.fadeToggle('fast');
 			cmeClr();

@@ -2,35 +2,37 @@
 	<input type="button" id="viewform" class="callme_viewform">
 </div>
 
-<div class="cme-form">
+<div class="cme-form modal">
 	<form class="cme">
 		<a class="cme-cls" href="/callme/">&times;</a>
-		<h6>{{:title}}</h6>
-		<div class="cme-fields">
-			<div class="cme-template" data-cme="textField">
-				<span>{{:caption}}</span>
-				<span><input placeholder="{{:placeholder}}" name="{{:caption}}" required class="cme-txt" type="text" maxlength="150"></span>
-			</div>
+		<h6 class="title">{{:title}}</h6>
+        <div class="body">
+            <div class="cme-fields">
 
-			<div class="cme-template" data-cme="textArea">
-				<span>{{:caption}}</span>
-				<span><textarea name="{{:caption}}" placeholder="{{:placeholder}}" required class="cme-txt"></textarea></span>
-			</div>
+                <div class="cme-template" data-cme="textField">
+                    <span class="label required">{{:caption}}</span>
+                    <span><input placeholder="{{:placeholder}}" name="{{:caption}}" required class="cme-txt" type="text" maxlength="150"></span>
+                </div>
 
-			<div class="cme-template" data-cme="checkBox">
-				<span><label><input name="{{:caption}}" type="checkbox"> {{:caption}}</label></span>
-			</div>
+                <div class="cme-template" data-cme="textArea">
+                    <span class="label required">{{:caption}}</span>
+                    <span><textarea name="{{:caption}}" placeholder="{{:placeholder}}" required class="cme-txt"></textarea></span>
+                </div>
 
-			<div class="cme-template" data-cme="select">
-				<span>{{:caption}}</span>
-				<select class="cme-select" name="{{:caption}}">{{:selectArea}}</select>
-			</div>
-			
-			<div class="cme-template" data-cme="selectOption">
-				<option class="cme-template">{{:option}}</option>
-			</div>
+                <div class="cme-template" data-cme="checkBox">
+                    <span class="label required"><label><input name="{{:caption}}" type="checkbox"> {{:caption}}</label></span>
+                </div>
 
-			<div class="cme-template" data-cme="selectTime">
+                <div class="cme-template" data-cme="select">
+                    <span class="label required">{{:caption}}</span>
+                    <select class="cme-select" name="{{:caption}}">{{:selectArea}}</select>
+                </div>
+
+                <div class="cme-template label-wrap" data-cme="selectOption">
+                    <option class="cme-template">{{:option}}</option>
+                </div>
+
+                <div class="cme-template" data-cme="selectTime">
 				<span class="cme_ct">
 					<div>{{:txtCallTime}}</div>
 					<div>{{:txtDay}}</div>
@@ -39,13 +41,13 @@
 					<div><select class="cme-ct-finish">{{:timeEnd}}</select></div>
 					<div>{{:txtHours}}</div>
 				</span>
-			</div>
-		</div>
+                </div>
+            </div>
 
 		<span class="cme-btn-place"><span></span>
-			<button class="cme-btn">{{:button}}</button>
+			<button class="cme-btn pure-button button-primary">{{:button}}</button>
 		</span>
-		<div class="callme-result"></div>
+        </div>
 	</form>
 </div>
 <div id="cme-back"></div>

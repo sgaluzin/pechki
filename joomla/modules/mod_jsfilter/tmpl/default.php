@@ -82,15 +82,6 @@ JHtml::_('script', JURI::root().'modules/mod_jsfilter/assets/jsfilter.js' );
 <div id="jsfilter_<?php echo $module->id; ?>" class="filter sf_wrapper">
 
 	<div class="sf_container<?php echo ( (int)$cfg['mod_direction'] ) ? ' sf_inline' : ''; ?>">
-		<?php
-		if ( $cfg['title'] ) {
-		?>
-		<div class="sf_header">
-			<?php echo $cfg['title']; ?>
-		</div>
-		<?php
-		}
-		?>
 
 		<form id="smart_filter_<?php echo $module->id; ?>" name="smart_filter_<?php echo $module->id; ?>" class="sf_form" action="<?php echo JURI::base(); ?>index.php?option=com_jshopping&controller=jsfilter" method="post" onsubmit="return sf_load(this);">
 			

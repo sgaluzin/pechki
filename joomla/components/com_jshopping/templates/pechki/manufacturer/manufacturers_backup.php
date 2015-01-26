@@ -15,7 +15,7 @@ defined('_JEXEC') or die('Restricted access');
 <?php print $this->manufacturer->description?>
 
 <?php if (count($this->rows)){?>
-<div class="jshop_list_manufacturer grid-brand">
+<div class="jshop_list_manufacturer">
 <table class = "jshop">
     <?php foreach($this->rows as $k=>$row){?>
         <?php if ($k%$this->count_manufacturer_to_row==0) print "<tr>";?>

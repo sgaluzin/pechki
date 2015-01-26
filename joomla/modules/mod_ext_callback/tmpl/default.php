@@ -62,6 +62,7 @@ defined('_JEXEC') or die;?><div class="mod_ext_callback <?php echo $moduleclass_
             <?php
         }
     }
+
     if (!isset($_POST['extsendcallback']) || $errMsg != '') {?><div class="ext_callback_form">
             <?php
             if ($errMsg != '') {

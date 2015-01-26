@@ -12,12 +12,7 @@
  */
 
 // no direct access
-defined('_JEXEC') or die;
-?>
-
-
-<div class="mod_ext_callback <?php echo $moduleclass_sfx ?>">
-
+defined('_JEXEC') or die;?><div class="mod_ext_callback <?php echo $moduleclass_sfx ?>">
     <?php
 // check
     if (isset($_POST['extsendcallback'])) {
@@ -57,7 +52,7 @@ defined('_JEXEC') or die;
             mail($ext_my_email, $ext_subject, $msg, $headers);
             ?>
             <div style="text-align:center;">
-                <p>
+                <p class="alert-message">
                     <?php
                     echo $ext_send_message == '' ? JText::_(SENDMESSAGE) : $ext_send_message;
                     ?>
@@ -67,10 +62,7 @@ defined('_JEXEC') or die;
             <?php
         }
     }
-
-    if (!isset($_POST['extsendcallback']) || $errMsg != '') {
-        ?>	
-        <div class="ext_callback_form">
+    if (!isset($_POST['extsendcallback']) || $errMsg != '') {?><div class="ext_callback_form">
             <?php
             if ($errMsg != '') {
                 echo '<p>' . $errMsg . '</p>';
@@ -94,7 +86,7 @@ defined('_JEXEC') or die;
                     </p>
                 <?php } ?>
                 <p>
-                    <input type="submit" class="btn" value="<?php echo $ext_send_label; ?>"  name="extsendcallback" />
+                    <input type="submit" class="btn pure-button button-primary" value="<?php echo $ext_send_label; ?>"  name="extsendcallback" />
                 </p>
             </form>	
         </div>

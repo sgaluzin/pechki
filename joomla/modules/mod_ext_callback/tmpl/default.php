@@ -12,7 +12,8 @@
  */
 
 // no direct access
-defined('_JEXEC') or die;?><div class="mod_ext_callback <?php echo $moduleclass_sfx ?>"><?php
+defined('_JEXEC') or die;?><div class="mod_ext_callback <?php echo $moduleclass_sfx ?>">
+    <?php
 // check
     if (isset($_POST['extsendcallback'])) {
         $name = trim(strip_tags($_POST["name"]));
@@ -49,21 +50,26 @@ defined('_JEXEC') or die;?><div class="mod_ext_callback <?php echo $moduleclass_
             //$headers .= "Return-Path: $email\r\n";
 
             mail($ext_my_email, $ext_subject, $msg, $headers);
-            ?><div style="text-align:center;">
-                <p>
+            ?>
+            <div style="text-align:center;">
+                <p class="alert-message">
                     <?php
                     echo $ext_send_message == '' ? JText::_(SENDMESSAGE) : $ext_send_message;
                     ?>
                 </p>
                 <div style="clear:both;"></div>
-            </div><?php
+            </div>
+            <?php
         }
     }
-    if (!isset($_POST['extsendcallback']) || $errMsg != '') {?><div class="ext_callback_form"><?php
+
+    if (!isset($_POST['extsendcallback']) || $errMsg != '') {?><div class="ext_callback_form">
+            <?php
             if ($errMsg != '') {
                 echo '<p>' . $errMsg . '</p>';
             }
-            ?><form id="ext_callback_id_<?php echo $ext_id; ?>" class="blocks" action="" method="post">
+            ?>
+            <form id="ext_callback_id_<?php echo $ext_id; ?>" class="blocks" action="" method="post">
                 <p class="ext-callback-field-name">
                     <label><?php echo $ext_name_label; ?></label>
                     <input required type="text" class="text" name="name" placeholder="<?php echo $ext_attribute_name; ?>" />
@@ -81,7 +87,7 @@ defined('_JEXEC') or die;?><div class="mod_ext_callback <?php echo $moduleclass_
                     </p>
                 <?php } ?>
                 <p>
-                    <input type="submit" class="btn" value="<?php echo $ext_send_label; ?>"  name="extsendcallback" />
+                    <input type="submit" class="btn pure-button button-primary" value="<?php echo $ext_send_label; ?>"  name="extsendcallback" />
                 </p>
             </form>	
         </div>

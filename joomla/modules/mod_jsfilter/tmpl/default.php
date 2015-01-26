@@ -55,7 +55,7 @@ JHtml::_('script', JURI::root().'modules/mod_jsfilter/assets/jsfilter.js' );
 	
 </script>
 
-
+<h1><?=JFactory::getDocument()->getTitle()?></h1>
 <div id="jsfilter_ajax_sample" style="display:none;">
 	<div class="">
 		<div class="loader">

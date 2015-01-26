@@ -34,9 +34,9 @@ defined('_JEXEC') or die('Restricted access');
                 <input type="hidden" name="product_id" value="<?php print $this->product->product_id?>" />
                 <input type="hidden" name="back_link" value="<?php print jsFilterUrl($_SERVER['REQUEST_URI'])?>" />
                 <?php echo JHtml::_('form.token');?>
-                <table id="jshop_review_write" >
+                <table id="jshop_review_write" class = "add-review">
                     <tr>
-                        <td>
+                        <td class="label">
                             <?php print _JSHOP_REVIEW_USER_NAME?>
                         </td>
                         <td>
@@ -44,7 +44,7 @@ defined('_JEXEC') or die('Restricted access');
                         </td>
                     </tr>
                     <tr>
-                        <td>
+                        <td class="label">
                             <?php print _JSHOP_REVIEW_USER_EMAIL?>
                         </td>
                         <td>
@@ -52,19 +52,19 @@ defined('_JEXEC') or die('Restricted access');
                         </td>
                     </tr>
                     <tr>
-                        <td>
+                        <td class="label">
                             <?php print _JSHOP_REVIEW_REVIEW?>
                         </td>
                         <td>
-                            <textarea name="review" id="review_review" rows="4" cols="40" class="jshop inputbox" style="width:320px;"></textarea>
+                            <textarea name="review" id="review_review" rows="4" cols="40" class="jshop inputbox"></textarea>
                         </td>
                     </tr>
                     <tr>
-                        <td>
+                        <td class="label">
                             <?php print _JSHOP_REVIEW_MARK_PRODUCT?>
                         </td>
                         <td>
-                            <?php for($i=1; $i<=$this->stars_count*$this->parts_count; $i++){?>
+                            <?php for($i=1; $i<=5; $i++){?>
                                 <input name="mark" type="radio" class="star {split:<?php print $this->parts_count?>}" value="<?php print $i?>" <?php if ($i==$this->stars_count*$this->parts_count){?>checked="checked"<?php }?>/>
                             <?php } ?>
                         </td>
@@ -73,7 +73,7 @@ defined('_JEXEC') or die('Restricted access');
                     <tr>
                         <td></td>
                         <td>
-                            <input type="submit" class="button validate" value="<?php print _JSHOP_REVIEW_SUBMIT?>" />
+                            <input type="submit" class="button validate pure-button button-primary" value="<?php print _JSHOP_REVIEW_SUBMIT?>" />
                         </td>
                     </tr>
                 </table>

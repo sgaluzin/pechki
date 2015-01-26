@@ -9,8 +9,8 @@
 defined('_JEXEC') or die('Restricted access');
 ?>
 <div class="jshop" id="comjshop">
-<?php print $this->category->description?>
-
+    <h1><?php print $this->category->name?></h1>
+    <?php print $this->category->description?>
 <div class="jshop_list_category">
 <?php if (count($this->categories)){ ?>
 <table class = "jshop list_category">

@@ -67,7 +67,7 @@
                 $("<img />").attr('src', $(el).attr('src'))
                     .bind('error',{'self' : el}, function(ev){
                         var self = ev.data.self;
-                        $(self).attr('src', siteUrl+'/joomla/templates/pechki/img/default-image-small.png');
+                        $(self).attr('src', siteUrl+'/templates/pechki/img/default-image-small.png');
                     });
             });
         }

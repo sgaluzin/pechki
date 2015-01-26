@@ -1,0 +1,23 @@
+.alert-message{
+  position: relative;
+  margin: 10px 0;
+  padding: 5px 14px 12px;
+  .border(1px, @active-clr);
+  background: fade(@active-clr, 7%);
+  h4{
+    margin: .6em 0 0;
+    font-size: 1.2em;
+  }
+  .close{
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0 14px;
+    font-size: 2em;
+    line-height: 1em;
+    cursor: pointer;
+  }
+  p{
+    margin: 10px 0;
+  }
+}

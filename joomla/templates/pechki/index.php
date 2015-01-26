@@ -122,7 +122,6 @@ else
                 <div class="container<?php echo ($params->get('fluidContainer') ? '-fluid' : ''); ?>">
                     <header class="header" role="banner">
                         <jdoc:include type="modules" name="bread-crumbs" style="no" />
-                        <h1><?=$doc->getTitle()?></h1>
                         <jdoc:include type="modules" name="filter" style="no" />
                         </div>
                     </header>

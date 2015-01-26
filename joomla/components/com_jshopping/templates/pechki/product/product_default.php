@@ -14,7 +14,8 @@ $product = $this->product;
 <?php include(dirname(__FILE__)."/load.js.php");?>
 <div class="jshop productfull product"  id="comjshop">
 <form name="product" method="post" action="<?php print $this->action?>" enctype="multipart/form-data" autocomplete="off">
-    <h1><?=$this->title?></h1>
+    <h1><?=$this->product->name?><?php include(dirname(__FILE__)."/ratingandhits.php");?></h1>
+
     <?php include(dirname(__FILE__)."/ratingandhits.php");?>
 
     <?php print $this->_tmp_product_html_start;?>

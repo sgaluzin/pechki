@@ -28,7 +28,7 @@ defined('_JEXEC') or die('Restricted access');
         <?php }?>
     </td>
     <td class="producer">
-        <?var_dump($product->product_manufacturer_id)?>
+        <?=$product->manufacturer->name; ?>
     </td>
     <td class="model">
         <span class="top"><?=$product->category_id?></span>
@@ -43,7 +43,9 @@ defined('_JEXEC') or die('Restricted access');
             <?php }?>
         </div>
     </td>
-    <td class="volume">до <?=$product->reviews_count?> куб.м</td>
+    <td class="volume">до <?=$product->reviews_count?> куб.м
+        <? var_dump($product);?>
+    </td>
     <td class="weight">0</td>
     <td class="size">0</td>
     <td class="price">

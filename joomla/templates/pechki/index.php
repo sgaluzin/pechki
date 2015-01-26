@@ -130,6 +130,7 @@ else
                         <jdoc:include type="modules" name="slider" style="no" />
                         <jdoc:include type="message" />
                         <jdoc:include type="component" />
+                        <jdoc:include type="modules" name="after-component" style="well" />
                         <!-- End Content -->
                     </div>
 		    </div><!-- End 'content' -->

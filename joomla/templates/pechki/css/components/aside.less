@@ -6,7 +6,7 @@
     .border(1px, @border-clr);
     .header,.page-header{
       margin: 0;
-      padding-left: 34px;
+      padding-left: 30px;
       font-size: 1rem;
       background: #f1eadc;
       .border-bottom(1px, @border-clr);
@@ -20,28 +20,34 @@
       .item{
         .link{
           display: inline-block;
-          padding: .4em 34px;
+          padding: .4em 30px;
           text-transform: uppercase;
           color: #373330;
           &:hover{
             color: @active-clr;
           }
-        }
-        &.discount .link{
-          position: relative;
-          font-weight: 600;
-          color: @active-clr;
-          .icon{
-            position: absolute;
-            top: 5px;
-            display: inline-block;
-            width: 22px;
-            height: 22px;
-            margin-left: 6px;
-            background: url(../img/icon-discount.png) no-repeat;
-            line-height: 22px;
+          &.menu-a-discount{
+            position: relative;
+            font-weight: 600;
+            color: @active-clr;
+            &:hover{
+              color: @active-clr;
+            }
+            &:after{
+              content: "";
+              position: absolute;
+              top: 5px;
+              right: 0;
+              display: inline-block;
+              width: 22px;
+              height: 22px;
+              margin-left: 6px;
+              background: url(../img/icon-discount.png) no-repeat;
+              line-height: 22px;
+            }
           }
         }
+
         &.stock{
           display: none;
           .link{

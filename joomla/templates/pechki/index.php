@@ -121,13 +121,29 @@ else
             <div class="content">
                 <div class="container<?php echo ($params->get('fluidContainer') ? '-fluid' : ''); ?>">
                     <header class="header" role="banner">
-                        <jdoc:include type="modules" name="bread-crumbs" style="no" />
+                        <div class="group">
+                            <jdoc:include type="modules" name="bread-crumbs" style="no" />
+                            <div class="right">
+                                <div class="social">
+                                    <span>Поделиться:</span>
+                                    <div class="wrap">
+                                        <div class="tw item"><a class="link" href="#">tw</a></div>
+                                        <div class="vk item"><a class="link" href="#">vk</a></div>
+                                        <div class="fb item"><a class="link" href="#">fb</a></div>
+                                    </div>
+                                </div>
+                                <div class="print">Версия для печати <i class="icon"></i></div>
+                            </div>
+                        </div>
                         <jdoc:include type="modules" name="filter" style="no" />
                         </div>
                     </header>
                     <jdoc:include type="modules" name="banner" style="xhtml" />
                         <!-- Begin Content -->
                         <jdoc:include type="modules" name="slider" style="no" />
+                        <div class="grid-product">
+                            <jdoc:include type="modules" name="discount" style="no" />
+                        </div>
                         <jdoc:include type="message" />
                         <jdoc:include type="component" />
                         <jdoc:include type="modules" name="after-component" style="well" />

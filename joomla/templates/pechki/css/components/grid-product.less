@@ -1,13 +1,31 @@
 .grid-product{
+  margin: 5px -5px;
+}
+.grid-product .custom{
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
-  margin: 0 -5px;
   .item-wrap{
     width: 25%;
     .item{
       margin: 5px;
       padding: 12px;
       background: #fff;
+      .top-wrap{
+        padding: 5px 12px 5px 12px;
+        margin: -12px -12px 5px;
+        text-align: center;
+        &.discount{
+          background: #81160E;
+        }
+        .title{
+          color: #fff;
+          font-weight: 600;
+          text-transform: uppercase;
+          text-align: center;
+          font-size: 1.1em;
+        }
+      }
       .border(#c3b59b);
       .title, .sub-title, .over-title{
         color: #51342e;
@@ -34,6 +52,8 @@
         img{
           //width: 100%;
           .full-center-align;
+          max-width: 100%;
+          max-height: 100%;
         }
       }
       .bottom{
@@ -43,6 +63,11 @@
           font-size: 1.1em;
           font-weight: 600;
           color: @active-clr;
+          &.before{
+            font-size: .9em;
+            color: @primary-clr;
+            margin: 6px 0 -4px;
+          }
         }
         .pure-button{
         }

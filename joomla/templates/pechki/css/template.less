@@ -132,6 +132,9 @@ textarea{
 }
 
 .social{
+  .custom{
+    display: inline-block;
+  }
   .fb{
     background: url(../img/icon-fb.png) center no-repeat #496194;
   }
@@ -145,7 +148,7 @@ textarea{
     width: 30px;
     height: 30px;
     font-size: 0;
-    background-size: contain;
+    background-size: cover;
   }
   .link{
     display: inline-block;
@@ -182,9 +185,19 @@ textarea{
   }
 }
 .print{
+  .custom{
+    display: inline-block;
+  }
   display: inline-block;
   font-size: .9em;
   color: #51342e;
+  .link:hover, .link:hover .icon{
+    color: #51342e;
+    text-decoration: underline;
+    .icon{
+      color: transparent;
+    }
+  }
   .icon{
     position: relative;
     top: 4px;
@@ -193,6 +206,11 @@ textarea{
     height: 17px;
     margin-left: 6px;
     background: url(../img/icon-print.png) no-repeat;
+    color: transparent;
+  }
+  p{
+    display: inline-block;
+    margin: 0;
   }
 }
 .content .header .social{
@@ -211,6 +229,10 @@ textarea{
         color: transparent;
       }
     }
+  }
+  p{
+    display: inline-block;
+    margin: 0;
   }
 }
 .discount-row{

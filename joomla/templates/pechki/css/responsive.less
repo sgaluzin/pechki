@@ -11,6 +11,10 @@
       padding-top: 10px;
     }
   }
+  .container.main .content .container{
+    padding: 0;
+
+  }
   /*header*/
   .header-main .call-back .minor{
     display: none !important;
@@ -97,11 +101,14 @@
       .menu{
         .horiz-menu;
         .item{
-          width: 19%;
+          width: 24%;
           text-align: center;
           padding: .4em 0;
           .link{
             padding: .4em .6em;
+            &.menu-a-discount{
+              padding: .4em 30px .4em.6em;
+            }
           }
           &.stock{
             display: inline-block;

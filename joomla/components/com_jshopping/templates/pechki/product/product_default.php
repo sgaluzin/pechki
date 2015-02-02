@@ -25,7 +25,7 @@ $product = $this->product;
             <?php foreach($this->images as $k=>$image){?>
                 <?if ($k==0){?>
                     <div class="main-image">
-                        <div class="wrap">
+                        <div class="wrap" style="background: url(<?=$this->image_product_path.'/'.$image->image_name;?>)">
                             <a class="lightbox" id="main_image_full_<?php print $image->image_id?>" href="<?php print $this->image_product_path?>/<?php print $image->image_full;?>" <?php if ($k!=0){?>style="display:none"<?php }?> title="<?php print htmlspecialchars($image->_title)?>">
                                 <img id = "main_image_<?php print $image->image_id?>" src = "<?php print $this->image_product_path?>/<?php print $image->image_name;?>" alt="<?php print htmlspecialchars($image->_title)?>" title="<?php print htmlspecialchars($image->_title)?>" />
                             </a>

@@ -13,20 +13,19 @@
       box-sizing: border-box;
       padding: 15px;
       background: #fff;
+      overflow: hidden;
     }
     .main-image .wrap{
       position: relative;
       width: 100%;
       height: 100%;
-      .wrap{
-        img{
-          .full-center-align;
-        }
-      }
+      background-size: contain !important;
+      background-repeat: no-repeat !important;
+      background-position: center !important;
       img{
         .full-center-align;
-        max-width: 100%;
-        height: 100%;
+        width: 100%;
+        opacity: 0;
       }
     }
     .image-list{
@@ -73,6 +72,10 @@
         .metric{
           font-size: 1.25em;
           text-transform: lowercase;
+        }
+
+        @media all and (max-width: 1020px) {
+          font-size: 1.25em;
         }
       }
       .button-primary{

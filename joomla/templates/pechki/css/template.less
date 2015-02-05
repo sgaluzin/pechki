@@ -8,7 +8,11 @@
   src: url(fonts/pt-sans.narrow-bold.ttf);
   font-weight: 600;
 }
-
+@font-face {
+  font-family: 'Impacteg';
+  src: url('fonts/impacteg.eot');
+  src: local('impactreg'), url('fonts/impacteg.woff') format('woff'), url('fonts/impacteg.ttf') format('truetype');
+}
 html, body{
   height: 100%;
   font-size: 16px;
@@ -101,12 +105,15 @@ textarea{
     padding: 0 @desk-padding;
   }
 }
+.container.main, .header-main{
+  min-width: 740px;
+  box-sizing: border-box;
+}
 
 .wrap-main{
   min-height: 100%;
   box-sizing: border-box;
   margin-bottom: -48px;
-  overflow: auto;
   &:after{
     content: "";
     display: block;

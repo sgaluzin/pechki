@@ -50,9 +50,7 @@
     </div>
 </div>
 <div class="social">
-    <div class="tw item"><a class="link" href="#"></a></div>
-    <div class="vk item"><a class="link" href="#"></a></div>
-    <div class="fb item"><a class="link" href="#"></a></div>
+    <jdoc:include type="modules" name="social-top" style="no" />
 </div>
 
 

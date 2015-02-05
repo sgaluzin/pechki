@@ -8,8 +8,6 @@
 */
 defined('_JEXEC') or die('Restricted access');
 ?>
-<?php if ($this->config->average_rating){?>
-    <div class="rating r-<?=$this->product->average_rating;?>">
-        <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
-    </div>
-<?php } ?>
+<div class="rating r-<?=$this->product->average_rating;?>">
+    <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+</div>

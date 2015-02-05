@@ -130,10 +130,9 @@
     .logo-name{
       float: left;
       display: block;
-
       .title{
         margin: 4px 0 0;
-        font: 400 1.5em Impact;
+        font: 400 1.5em 'Impacteg',Impact;
         text-transform: uppercase;
       }
       .sub-title{
@@ -162,7 +161,7 @@
       }
       .phone{
         display: inline-block;
-        font: 400 1.5em Impact;
+        font: 400 1.5em 'Impacteg', Impact;
       }
     }
   }
@@ -189,11 +188,12 @@
         float: left;
         width: 16.666%;
         z-index: 12;
+        padding-top: 10px;
         &:hover .label, &.active .label{
           background: #453125;
         }
         .thumb{
-          height: 156px;
+          height: 148px;
           background-size: contain !important;
         }
         &:nth-child(1) .thumb{
@@ -214,15 +214,17 @@
         &:nth-child(6) .thumb{
           background: url(../img/menu/it-6.png) no-repeat center;
         }
+
         .label{
           position: relative;
+          height: 47px;
+          margin-top: 5px;
           font-size: 1rem;
           border-left: 1px solid #715e51;
           text-transform: uppercase;
           text-align: center;
           font-weight: 600;
           color: #f9f6ef;
-          height: 47px;
           span{
             .full-center-align;
             width: 100%;
@@ -236,7 +238,7 @@
   }
   .social{
     position: absolute;
-    top: 19px;
+    top: 28px;
     right: 0;
   }
 }

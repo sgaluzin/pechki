@@ -8,7 +8,11 @@
   src: url(fonts/pt-sans.narrow-bold.ttf);
   font-weight: 600;
 }
-
+@font-face {
+  font-family: 'Impacteg';
+  src: url('fonts/impacteg.eot');
+  src: local('impactreg'), url('fonts/impacteg.woff') format('woff'), url('fonts/impacteg.ttf') format('truetype');
+}
 html, body{
   height: 100%;
   font-size: 16px;
@@ -101,12 +105,15 @@ textarea{
     padding: 0 @desk-padding;
   }
 }
+.container.main, .header-main{
+  min-width: 740px;
+  box-sizing: border-box;
+}
 
 .wrap-main{
   min-height: 100%;
   box-sizing: border-box;
   margin-bottom: -48px;
-  overflow: auto;
   &:after{
     content: "";
     display: block;
@@ -132,10 +139,9 @@ textarea{
 }
 
 .social{
-  .item{
-    width: 30px;
-    height: 30px;
-    font-size: 0;
+
+  .custom{
+    display: inline-block;
   }
   .fb{
     background: url(../img/icon-fb.png) center no-repeat #496194;
@@ -146,6 +152,12 @@ textarea{
   .tw{
     background: url(../img/icon-tw.png) center no-repeat #28c3ff;
   }
+  .item{
+    width: 30px;
+    height: 30px;
+    font-size: 0;
+    background-size: cover;
+  }
   .link{
     display: inline-block;
     width: 100%;
@@ -155,6 +167,7 @@ textarea{
 
 .breadcrumb{
   padding-top: 10px;
+  float: left;
   .horiz-menu;
   .item{
     padding-right: 5px;
@@ -179,7 +192,57 @@ textarea{
     }
   }
 }
-
+.print{
+  .custom{
+    display: inline-block;
+  }
+  display: inline-block;
+  font-size: .9em;
+  color: #51342e;
+  .link:hover, .link:hover .icon{
+    color: #51342e;
+    text-decoration: underline;
+    .icon{
+      color: transparent;
+    }
+  }
+  .icon{
+    position: relative;
+    top: 4px;
+    display: inline-block;
+    width: 18px;
+    height: 17px;
+    margin-left: 6px;
+    background: url(../img/icon-print.png) no-repeat;
+    color: transparent;
+  }
+  p{
+    display: inline-block;
+    margin: 0;
+  }
+}
+.content .header .social{
+  display: inline-block;
+  margin-right: 15px;
+  .wrap{
+    display: inline-block;
+    margin-left: 5px;
+    .item{
+      display: inline-block;
+      width: 22px;
+      height: 22px;
+      margin-right: 4px;
+      font-size: 1em;
+      .link{
+        color: transparent;
+      }
+    }
+  }
+  p{
+    display: inline-block;
+    margin: 0;
+  }
+}
 .discount-row{
   width: 100%;
   padding: 0 17px;

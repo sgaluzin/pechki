@@ -16,8 +16,6 @@ $product = $this->product;
 <form name="product" method="post" action="<?php print $this->action?>" enctype="multipart/form-data" autocomplete="off">
     <h1><?=$this->product->name?><?php include(dirname(__FILE__)."/ratingandhits.php");?></h1>
 
-    <?php include(dirname(__FILE__)."/ratingandhits.php");?>
-
     <?php print $this->_tmp_product_html_start;?>
     <?php if ($this->config->display_button_print) print printContent();?>
 
@@ -27,7 +25,7 @@ $product = $this->product;
             <?php foreach($this->images as $k=>$image){?>
                 <?if ($k==0){?>
                     <div class="main-image">
-                        <div class="wrap">
+                        <div class="wrap" style="background: url(<?=$this->image_product_path.'/'.$image->image_name;?>)">
                             <a class="lightbox" id="main_image_full_<?php print $image->image_id?>" href="<?php print $this->image_product_path?>/<?php print $image->image_full;?>" <?php if ($k!=0){?>style="display:none"<?php }?> title="<?php print htmlspecialchars($image->_title)?>">
                                 <img id = "main_image_<?php print $image->image_id?>" src = "<?php print $this->image_product_path?>/<?php print $image->image_name;?>" alt="<?php print htmlspecialchars($image->_title)?>" title="<?php print htmlspecialchars($image->_title)?>" />
                             </a>

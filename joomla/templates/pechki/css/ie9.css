@@ -1,0 +1,16 @@
+.header-main .top .search-form .btn{
+    top: -2px;
+    height: 1.63em;
+}
+.grid-brand, .grid-product{
+    font-size: 0;
+}
+.grid-brand .item-wrap, .grid-product .custom .item-wrap{
+    display: inline-block;
+}
+.grid-brand .item-wrap .item .title, .grid-product .custom .item-wrap .item{
+    font-size: 1rem;
+}
+.product .image-block .main-image .wrap img{
+    opacity: 1;
+}

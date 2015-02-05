@@ -53,6 +53,11 @@
         <position>search-top</position>
         <position>slider</position>
         <position>after-component</position>
+        <position>discount</position>
+        <position>social-top</position>
+        <position>social-page-top</position>
+        <position>print-page-top</position>
+
     </positions>
     <languages folder="language">
         <language tag="en-GB">en-GB/en-GB.tpl_protostar.ini</language>

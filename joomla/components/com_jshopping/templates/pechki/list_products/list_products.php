@@ -15,7 +15,7 @@ defined('_JEXEC') or die('Restricted access');
         <th class="model">Модель</th>
         <th class="volume">Объем помещения</th>
         <th class="weight">Вес(кг)</th>
-        <th class="size">Размеры</th>
+        <th class="size">Размеры(ГxШxВ)</th>
         <th class="price">Цена</th>
         <th class="action"></th>
     </tr>

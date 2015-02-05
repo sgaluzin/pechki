@@ -76,5 +76,11 @@
             $('.review-body').toggle();
         });
 
+        $('.header-main .logo .link').mouseenter(function(){
+            $('.header-main .middle-row .logo-name').addClass('active');
+        }).mouseleave(function(){
+            $('.header-main .middle-row .logo-name').removeClass('active');
+        });
+
 	})
 })(jQuery);

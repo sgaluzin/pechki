@@ -1,6 +1,6 @@
 <?php ?>
 <div class="container">
-    <div class="logo"></div>
+    <div class="logo"><a class="link" href="<?=JURI::base()?>"></a></div>
     <div class="top">
         <?php if ($this->countModules('search-top')) : ?>
             <div class="search-form right">

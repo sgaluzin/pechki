@@ -72,5 +72,9 @@
             });
         }
 
+        $('.review-header').on('click', function(){
+            $('.review-body').toggle();
+        });
+
 	})
 })(jQuery);

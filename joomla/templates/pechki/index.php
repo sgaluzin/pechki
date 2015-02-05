@@ -85,13 +85,16 @@ else
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $this->language; ?>" lang="<?php echo $this->language; ?>" dir="<?php echo $this->direction; ?>">
 <head>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=720">
     <link rel="stylesheet/less" href="/joomla/templates/pechki/css/main.less" type="text/css">
 	<jdoc:include type="head" />
 	<?php // Use of Google Font ?>
 	<?php if ($this->params->get('googleFont')) : ?>
 		<link href='//fonts.googleapis.com/css?family=<?php echo $this->params->get('googleFontName'); ?>' rel='stylesheet' type='text/css' />
 	<?php endif; ?>
+    <!--[if IE 9]>
+    <link rel="stylesheet" type="text/css" href="/joomla/templates/pechki/css/ie9.css" />
+    <![endif]-->
 	<?php // Template color ?>
 	<?php if ($this->params->get('templateColor')) : ?>
 	<?php endif; ?>
@@ -120,14 +123,30 @@ else
             </div>
             <div class="content">
                 <div class="container<?php echo ($params->get('fluidContainer') ? '-fluid' : ''); ?>">
+                    <?php if (JUri::getInstance()->toString() != JUri::base()) : ?>
                     <header class="header" role="banner">
-                        <jdoc:include type="modules" name="bread-crumbs" style="no" />
+                        <div class="group">
+                            <jdoc:include type="modules" name="bread-crumbs" style="no" />
+                            <div class="right">
+                                <div class="social">
+                                    <jdoc:include type="modules" name="social-page-top" style="no" />
+                                </div>
+                                <div class="print">
+                                    <jdoc:include type="modules" name="print-page-top" style="no" />
+                                </div>
+                            </div>
+                        </div>
                         <jdoc:include type="modules" name="filter" style="no" />
                         </div>
                     </header>
+                    <?php endif; ?>
+
                     <jdoc:include type="modules" name="banner" style="xhtml" />
                         <!-- Begin Content -->
                         <jdoc:include type="modules" name="slider" style="no" />
+                        <div class="grid-product">
+                            <jdoc:include type="modules" name="discount" style="no" />
+                        </div>
                         <jdoc:include type="message" />
                         <jdoc:include type="component" />
                         <jdoc:include type="modules" name="after-component" style="well" />

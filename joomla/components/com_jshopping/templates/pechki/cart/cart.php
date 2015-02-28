@@ -15,6 +15,7 @@ foreach ($this->products as $prod) {
 }
 $prod = null;
 ?>
+<h1>Коризна</h1>
 <div class="jshop" id="comjshop">
     <form action="<?php print SEFLink('index.php?option=com_jshopping&controller=cart&task=refresh') ?>" method="post"
           name="updateCart">

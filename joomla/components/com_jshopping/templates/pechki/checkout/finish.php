@@ -15,7 +15,7 @@ defined('_JEXEC') or die('Restricted access');
 <div id="system-message-container">
     <div id="system-message">
         <div class="alert alert-message">
-            <h4 class="alert-heading">Сообщение</h4>
+            <h4 class="alert-heading">Заказ обработан</h4>
             <div>
                 <p><?php print _JSHOP_THANK_YOU_ORDER?></p>
             </div>

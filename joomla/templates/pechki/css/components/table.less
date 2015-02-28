@@ -77,6 +77,9 @@ table.pure-table{
     }
   }
   &.order{
+    &.info{
+      margin-top: -1px;
+    }
     td{
       height: 72px;
       &.name{
@@ -95,6 +98,22 @@ table.pure-table{
         text-align: right;
         font-weight: 600;
         text-transform: uppercase;
+        .discount{
+          .label{
+            font-weight: 300;
+            font-size: 1em;
+            text-transform: none;
+            padding-right: 5px;
+
+          }
+          .inputbox{
+            width: 80px;
+            padding: .32em .5em;
+          }
+        }
+      }
+      .right{
+        line-height: 30px;
       }
     }
     tr{

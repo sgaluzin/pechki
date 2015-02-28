@@ -1,4 +1,4 @@
-.alert-message{
+.alert-message, .alert-error{
   position: relative;
   margin: 10px 0;
   padding: 5px 14px 12px;
@@ -10,9 +10,9 @@
   }
   .close{
     position: absolute;
-    top: 0;
+    top: 5px;
     right: 0;
-    padding: 0 14px;
+    padding: 4px 13px;
     font-size: 2em;
     line-height: 1em;
     cursor: pointer;
@@ -20,4 +20,11 @@
   p{
     margin: 10px 0;
   }
+}
+.alert-error{
+  h4{
+    display: none;
+  }
+  .border(1px, #fe1e1e);
+  background: fade(#f8e0e0, 7%);
 }

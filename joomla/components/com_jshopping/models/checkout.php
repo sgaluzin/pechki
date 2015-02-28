@@ -515,6 +515,7 @@ class jshopCheckout{
                     $mainframe->redirect(SEFLink('index.php?option=com_jshopping&controller=cart&task=view',1,1));
                 }else{
                     JError::raiseWarning("", _JHOP_ERROR_STEP);
+                    
                     $mainframe->redirect(SEFLink('index.php?option=com_jshopping&controller=checkout&task=step2',1,1, $jshopConfig->use_ssl));
                 }
                 exit();

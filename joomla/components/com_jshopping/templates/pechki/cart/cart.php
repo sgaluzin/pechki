@@ -11,7 +11,7 @@ defined('_JEXEC') or die('Restricted access');
 <?php $countprod = count($this->products); ?>
 <?php
 foreach ($this->products as $prod) {
-    $amountprod = $prod['quantity'];
+    $amountprod += $prod['quantity'];
 }
 $prod = null;
 ?>

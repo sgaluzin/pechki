@@ -133,6 +133,10 @@ class JshoppingControllerCheckout extends JControllerLegacy {
         $session = JFactory::getSession();
         $jshopConfig = JSFactory::getConfig();
         $post = JRequest::get('post');
+
+        //обработка номера телефона
+        $post['phone'] = $post['phone_code'] . $post['phone'];
+        
         if (!count($post)) {
             JError::raiseWarning("", _JSHOP_ERROR_DATA);
             $this->setRedirect(SEFLink('index.php?option=com_jshopping&controller=checkout&task=step2', 0, 1, $jshopConfig->use_ssl));

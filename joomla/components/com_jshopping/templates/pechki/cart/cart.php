@@ -11,10 +11,11 @@ defined('_JEXEC') or die('Restricted access');
 <?php $countprod = count($this->products); ?>
 <?php
 foreach ($this->products as $prod) {
-    $amountprod = $prod['quantity'];
+    $amountprod += $prod['quantity'];
 }
 $prod = null;
 ?>
+<h1 class="order-title">Корзина</h1>
 <div class="jshop" id="comjshop">
     <form action="<?php print SEFLink('index.php?option=com_jshopping&controller=cart&task=refresh') ?>" method="post"
           name="updateCart">
@@ -64,9 +65,9 @@ $prod = null;
                         </td>
                         <td class="value">
                             <input type="text" name="quantity[<?php print $key_id ?>]"
-                                   value="<?php print $prod['quantity'] ?>" class="inputbox" style="width: 25px"/>
+                                   value="<?php print $prod['quantity'] ?>" class="inputbox counter"/>
                             <?php print $prod['_qty_unit']; ?>
-                            <span class="cart_reload"><img style="cursor:pointer"
+                            <span class="cart-reload"><img style="cursor:pointer"
                                                            src="<?php print $this->image_path ?>images/reload.png"
                                                            title="<?php print _JSHOP_UPDATE_CART ?>"
                                                            alt="<?php print _JSHOP_UPDATE_CART ?>"
@@ -80,10 +81,8 @@ $prod = null;
                             <?php } ?>
                         </td>
                         <td class="action">
-                            <a href="<?php print $prod['href_delete'] ?>"
-                               onclick="return confirm('<?php print _JSHOP_CONFIRM_REMOVE ?>')"><img
-                                    src="<?php print $this->image_path ?>images/remove.png"
-                                    alt="<?php print _JSHOP_DELETE ?>" title="<?php print _JSHOP_DELETE ?>"/></a>
+                            <a class="remove" href="<?php print $prod['href_delete'] ?>"
+                               onclick="return confirm('<?php print _JSHOP_CONFIRM_REMOVE ?>')">✘</a>
                         </td>
                     </tr>
                     <?php
@@ -95,7 +94,7 @@ $prod = null;
 
                 <tr class="amount">
                     <td class="r-align" colspan="2">
-                        <div class="left discount">
+                        <!--<div class="left discount">
                             <?php print $this->_tmp_ext_html_before_discount ?>
                             <?php if ($this->use_rabatt && $countprod > 0) { ?>
                                 <form name="rabatt" method="post"
@@ -105,7 +104,7 @@ $prod = null;
                                     <input type="submit" class="button-primary pure-button" value="<?php print _JSHOP_RABATT_ACTIVE ?>"/>
                                 </form>
                             <?php } ?>
-                        </div>
+                        </div>-->
                         <span class="right">ИТОГО:</span>
                     </td>
                     <td class="value"><!--<input class="counter" type="text">--><strong><?php print $amountprod; ?></strong></td>

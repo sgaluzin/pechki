@@ -17,7 +17,7 @@ define('_JSHOP_ORDER_BY', 'Сортировка');
 define('_JSHOP_DISPLAY_NUMBER', 'Количество');
 define('_JSHOP_TABS_MAIN', 'Главная');
 define('_JSHOP_TABS_VIDEO', 'Видео');
-define('_JSHOP_PRODUCT', 'Товар');
+define('_JSHOP_PRODUCT', 'Товар'); 
 define('_JSHOP_PRICE', 'Цена');
 define('_JSHOP_ALL', 'Все');
 define('_JSHOP_ADDED_TO_CART', 'Товар добавлен в корзину. <a href="http://pechspb.ru/katalog/cart/view">Оформить заказ</a>');

@@ -159,7 +159,7 @@ else
 	<footer class="footer-main" role="contentinfo">
         <?php include_once($components_url.'footer.php'); ?>
 	</footer>
-	<jdoc:include type="modules" name="debug" style="none" />
+	<jdoc:include type="modules" name="debug" style="none" /> 
 
     <script>less = { env: 'development'};</script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.2.0/less.min.js"></script>

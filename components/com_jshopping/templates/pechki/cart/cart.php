@@ -232,7 +232,7 @@ $prod = null;
         </table>-->
         <?php print $this->_tmp_html_after_buttons ?>
     </form>
-
+ 
 
     <form action="http://pechspb.ru/katalog/checkout/step2save" method="post">
         <table class="pure-table order info">
@@ -241,18 +241,18 @@ $prod = null;
                     <div class="row personal">
                         <label class="label-wrap">
                             <span class="label">Имя получателя:</span>
-                            <input class="w6"  type="text" name="f_name" value="111"/>
+                            <input class="w6"  type="text" name="f_name" value=""/>
                         </label>
                         <label class="label-wrap">
                             <span class="label">E-mail:</span>
-                            <input class="w6" type="text" name="email" value="111@asdf.ri"/>
+                            <input class="w6" type="text" name="email" value=""/>
                         </label>
                         <label class="label-wrap phone">
                             <span class="label required">Телефон:</span>
                             +7
                             <input class="w1" type="text" name="phone_code"/>
                             <input class="w3" type="text" required="required" name="phone"
-                                                                          value="111"/>
+                                                                          value=""/>
                         </label>
                     </div>
                     <div class="row delivery">
@@ -279,19 +279,19 @@ $prod = null;
                         <div class="inputs">
                             <label class="label-wrap">
                                 <span class="label required">Город или населенный пункт:</span>
-                                <input class="w2" type="text" required="required" name="d_city" value="111"/>
+                                <input class="w2" type="text" required="required" name="d_city" value=""/>
                             </label>
                             <label class="label-wrap">
                                 <span class="label required">Улица:</span>
-                                <input class="w2" type="text" required="required" name="d_street" value="111"/>
+                                <input class="w2" type="text" required="required" name="d_street" value=""/>
                             </label>
                             <label class="label-wrap">
                                 <span class="label required">Дом:</span>
-                                <input class="w1" type="text" required="required" name="d_apartment" value="111"/>
+                                <input class="w1" type="text" required="required" name="d_apartment" value=""/>
                             </label>
                             <label class="label-wrap">
                                 <span class="label">Квартира</span>
-                                <input class="w1" type="text" name="d_home" value="111"/>
+                                <input class="w1" type="text" name="d_home" value=""/>
                             </label>
                         </div>
                     </div>

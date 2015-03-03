@@ -54,8 +54,8 @@ class JConfig {
 	public $sef_suffix = '0';
 	public $unicodeslugs = '0';
 	public $feed_limit = '10';
-	public $log_path = '/home/c/cs21439/public_html/joomla/logs';
-	public $tmp_path = '/home/c/cs21439/public_html/joomla/tmp';
+	public $log_path = '/home/c/cs21439/public_html/logs';
+	public $tmp_path = '/home/c/cs21439/public_html/tmp';
 	public $lifetime = '15';
 	public $session_handler = 'database';
 }

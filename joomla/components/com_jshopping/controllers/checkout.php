@@ -133,7 +133,7 @@ class JshoppingControllerCheckout extends JControllerLegacy {
         $session = JFactory::getSession();
         $jshopConfig = JSFactory::getConfig();
         $post = JRequest::get('post');
-        
+
         //обработка номера телефона
         $post['phone'] = $post['phone_code'] . $post['phone'];
         

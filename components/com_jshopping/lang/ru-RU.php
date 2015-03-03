@@ -20,7 +20,7 @@ define('_JSHOP_TABS_VIDEO', 'Видео');
 define('_JSHOP_PRODUCT', 'Товар');
 define('_JSHOP_PRICE', 'Цена');
 define('_JSHOP_ALL', 'Все');
-define('_JSHOP_ADDED_TO_CART', 'Товар добавлен в корзину. <a href="http://pechspb.ru/joomla/katalog/cart/view">Оформить заказ</a>');
+define('_JSHOP_ADDED_TO_CART', 'Товар добавлен в корзину. <a href="http://pechspb.ru/katalog/cart/view">Оформить заказ</a>');
 define('_JSHOP_ADDED_TO_WISHLIST', 'Товар отложен.');
 define('_JSHOP_ERROR_ADDED_TO_CART', 'Ошибка добавления в корзину');
 define('_JSHOP_PRODUCT_COUNT', 'Товар(а)');

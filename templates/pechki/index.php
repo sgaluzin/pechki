@@ -86,14 +86,14 @@ else
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $this->language; ?>" lang="<?php echo $this->language; ?>" dir="<?php echo $this->direction; ?>">
 <head>
     <meta name="viewport" content="width=720">
-    <link rel="stylesheet/less" href="/joomla/templates/pechki/css/main.less" type="text/css">
+    <link rel="stylesheet/less" href="/templates/pechki/css/main.less" type="text/css">
 	<jdoc:include type="head" />
 	<?php // Use of Google Font ?>
 	<?php if ($this->params->get('googleFont')) : ?>
 		<link href='//fonts.googleapis.com/css?family=<?php echo $this->params->get('googleFontName'); ?>' rel='stylesheet' type='text/css' />
 	<?php endif; ?>
     <!--[if IE 9]>
-    <link rel="stylesheet" type="text/css" href="/joomla/templates/pechki/css/ie9.css" />
+    <link rel="stylesheet" type="text/css" href="/templates/pechki/css/ie9.css" />
     <![endif]-->
 	<?php // Template color ?>
 	<?php if ($this->params->get('templateColor')) : ?>
@@ -164,6 +164,6 @@ else
     <script>less = { env: 'development'};</script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.2.0/less.min.js"></script>
     <script>less.watch();</script>
-    <script type="text/javascript" charset="utf-8" src="/joomla/callme/js/callme.js"></script>
+    <script type="text/javascript" charset="utf-8" src="/callme/js/callme.js"></script>
 </body>
 </html>

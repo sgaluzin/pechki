@@ -3893,7 +3893,7 @@ var isFileProtocol = /^(file|chrome(-extension)?|resource|qrc|app):/.test(locati
 
 less.env = less.env || (location.hostname == '127.0.0.1' ||
                         location.hostname == '0.0.0.0'   ||
-                        location.hostname == 'http://pechspb.ru/joomla' ||
+                        location.hostname == 'http://pechspb.ru' ||
                         location.port.length > 0         ||
                         isFileProtocol                   ? 'development'
                                                          : 'production');

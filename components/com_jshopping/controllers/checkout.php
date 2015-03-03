@@ -199,8 +199,8 @@ class JshoppingControllerCheckout extends JControllerLegacy {
 //            )
 //        );
 //        $context = stream_context_create($opts);
-//        $result = file_get_contents('http://pechspb.ru/joomla/katalog/checkout/step5', false, $context);
-//        $result = file_get_contents('http://pechspb.ru/joomla/katalog/checkout/step4save', false, $context);
+//        $result = file_get_contents('http://pechspb.ru/katalog/checkout/step5', false, $context);
+//        $result = file_get_contents('http://pechspb.ru/katalog/checkout/step4save', false, $context);
 
         $checkout->setMaxStep(10);
         

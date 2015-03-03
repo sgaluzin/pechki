@@ -43,7 +43,7 @@
 		});
         $('#comjshop')
 
-        var siteUrl = document.location.origin+'/joomla';
+        var siteUrl = document.location.origin+'';
         var productBigImg = $('.product .main-image img');
         var productSmallImgs = $('.product .image-list img');
         var catProductSmallImgs = $('.jshop_list_product .photo img');

@@ -234,7 +234,7 @@ $prod = null;
     </form>
 
 
-    <form action="http://pechspb.ru/joomla/katalog/checkout/step2save" method="post">
+    <form action="http://pechspb.ru/katalog/checkout/step2save" method="post">
         <table class="pure-table order info">
             <tr class="info">
                 <td>

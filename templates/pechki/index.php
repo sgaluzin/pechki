@@ -86,7 +86,7 @@ else
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $this->language; ?>" lang="<?php echo $this->language; ?>" dir="<?php echo $this->direction; ?>">
 <head>
     <meta name="viewport" content="width=720">
-    <link rel="stylesheet/less" href="/templates/pechki/css/main.less" type="text/css">
+    <link rel="stylesheet" href="/templates/pechki/css/main.css" type="text/css">
 	<jdoc:include type="head" />
 	<?php // Use of Google Font ?>
 	<?php if ($this->params->get('googleFont')) : ?>
@@ -161,9 +161,6 @@ else
 	</footer>
 	<jdoc:include type="modules" name="debug" style="none" /> 
 
-    <script>less = { env: 'development'};</script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.2.0/less.min.js"></script>
-    <script>less.watch();</script>
     <script type="text/javascript" charset="utf-8" src="/callme/js/callme.js"></script>
 </body>
 </html>

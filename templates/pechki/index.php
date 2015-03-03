@@ -45,7 +45,7 @@ $doc->addScript('templates/' . $this->template . '/js/template.js');
 
 // Add Stylesheets
 //$doc->addStyleSheet('templates/' . $this->template . '/css/template.css');
-//$doc->addStyleSheet('templates/' . $this->template . '/css/main.css');
+$doc->addStyleSheet('templates/' . $this->template . '/css/main.css');
 
 // Load optional RTL Bootstrap CSS
 JHtml::_('bootstrap.loadCss', false, $this->direction);
@@ -86,7 +86,6 @@ else
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $this->language; ?>" lang="<?php echo $this->language; ?>" dir="<?php echo $this->direction; ?>">
 <head>
     <meta name="viewport" content="width=720">
-    <link rel="stylesheet" href="/templates/pechki/css/main.css" type="text/css">
 	<jdoc:include type="head" />
 	<?php // Use of Google Font ?>
 	<?php if ($this->params->get('googleFont')) : ?>

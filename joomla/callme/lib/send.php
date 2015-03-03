@@ -3,7 +3,7 @@
 // dedushka.org // nazartokar.com // qbx.me // nazartokar@gmail.com
 //require("smtp.php");
 header("Content-Type: text/html; charset=utf-8"); //кодировка
-$to = "sgaluzin@gmail.com"; //получатель уведомлений
+$to = "ilia.nazmutdinov@gmail.com"; //получатель уведомлений
 // не трогать
 $HTTP_HOST = parse_url("http://" . $_SERVER["HTTP_HOST"]);
 $HTTP_HOST = str_replace(array("http://", "www."), "", $HTTP_HOST["host"]);
@@ -11,11 +11,11 @@ $from = "noreply@" . $HTTP_HOST; // отправитель. Если настр�
 // данные для отправки смс
 
 $sms["id"] = "";
-$sms["key"] = "";
+$sms["key"] = "2439ad88-ea56-9954-b50c-7f87a8785b24";
 $sms["log"] = "";
 $sms["pss"] = "";
 $sms["frm"] = "callme"; // добавьте новую подпись в смс-шлюзе и дождитесь апрува
-$sms["num"] = ""; // ваш номер в формате без + (79218886622)
+$sms["num"] = "79217530374"; // ваш номер в формате без + (79218886622)
 $sms["prv"] = "sms.ru"; // на выбор: sms.ru, infosmska.ru, bytehand.com, sms-sending.ru, smsaero.ru
 
 if ($_REQUEST['eeeva']) {

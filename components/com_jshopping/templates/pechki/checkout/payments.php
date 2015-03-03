@@ -1,4 +1,4 @@
-<?php 
+jgh<?php
 /**
 * @version      4.8.0 18.12.2014
 * @author       MAXXmarketing GmbH

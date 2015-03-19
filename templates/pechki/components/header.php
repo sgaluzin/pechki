@@ -18,7 +18,7 @@
         <div class="contacts">
             <p>Время работы:
             <p>с 10:00 до 22:00
-            <p class="email">E-mail: info@pechispb.ru
+            <p class="email">E-mail: info@pechspb.ru
         </div>
         <div class="cart-wrap">
             <jdoc:include type="modules" name="cart-top" style="well" />

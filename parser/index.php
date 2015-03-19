@@ -13,11 +13,11 @@
          */
 
         function getProductInfo($url) {
-            $page = file_get_contents('http://dev1.wwwlab.biz/proxy.php?url=' . $url);
+            $page = file_get_contents('http://text.wwwlab.biz/proxy.php?url='.$url);
 
             //category
             preg_match_all('/<div[^>]*class="[^"]*bs-item[^"]*"[^>]*>.*<\/div>/sUi', $page, $matches);
-            $elem = $matches[0][sizeof($matches[0]) - 3];
+            $elem = $matches[0][2];
             preg_match_all('/<a[^>]*>(.*)<\/a>/sUi', $elem, $matches);
             $product->category = trim($matches[1][0]);
 
@@ -25,8 +25,8 @@
             //price 
             preg_match_all('/<p[^>]*itemprop="[^"]*price[^"]*"[^>]*>(.*)<\/p>/sUi', $page, $matches);
             $result = trim($matches[1][0]);
-            $result = preg_replace('/[^0-9]/sUi', '', $result);
-            $product->price = $result;
+            $result = preg_replace('/[^0-9,]/sUi', '', $result);
+            $product->price = (float)$result;
 
             //name
             preg_match_all('/<h1[^>]*itemprop="[^"]*name[^"]*"[^>]*>(.*)<\/h1>/sUi', $page, $matches);
@@ -75,16 +75,30 @@
         }
 
         function getProductsLinks($url) {
-            $page = file_get_contents($url);
+            $page = file_get_contents('http://text.wwwlab.biz/proxy.php?url='.$url);
+//            $page = file_get_contents($url);
             preg_match_all('/<a[^>]*class="[^"]*b-pager__link_pos_last[^"]*"[^>]*href="([^"]*)"[^>]*>/sUi', $page, $matches);
-            $next_url = "http://dev1.wwwlab.biz/proxy.php?url=http://pechiikamini.ru{$matches[1][0]}";
-            if ($next_url != 'http://dev1.wwwlab.biz/proxy.php?url=http://pechiikamini.ru') {
+            if (!$page) {
+                echo 'не отадет страницу';
+                mail('sgaluzin@gmail.com', 'не работает парсер', 'читай тему '.$url);
+                exit;
+            }
+
+            $next_url = "http://pechiikamini.ru{$matches[1][0]}";
+            if ($next_url != 'http://pechiikamini.ru') {
+                $urls = file(dirname(__FILE__).'/data.txt');
+//                unset($urls[0]);
+                $urls[0] = $next_url . "\n";
+                file_put_contents(dirname(__FILE__).'/data.txt', implode("", $urls));
                 echo "<a href='?url={$next_url}'>Следующая страница</a>";
             } else {
+                $urls = file(dirname(__FILE__).'/data.txt');
+                unset($urls[0]);
+                file_put_contents(dirname(__FILE__).'/data.txt', implode("", $urls));
                 echo "<form action='' method='get'><input type='text' name='url'/><input type='submit' value='go'/></form>";
             }
 
-
+            
             //category
             preg_match_all('/<a[^>]*href="([^"]*)"[^>]*class="[^"]*b-product-line__product-name-link[^"]*"[^>]*>.*<\/a>/sUi', $page, $matches);
             $links = $matches[1];
@@ -99,7 +113,11 @@
 
         function imageresize($outfile, $infile, $neww, $newh = 0, $quality = 75) {
             $ext = end(explode(".", $infile));
-            if ($ext == 'gif') {
+            $ext = strtolower($ext);
+            if ($ext == 'png') {
+                $im = imagecreatefrompng($infile);
+            }
+            elseif ($ext == 'gif') {
                 $im = imagecreatefromgif($infile);
             } else {
                 $im = imagecreatefromjpeg($infile);
@@ -110,7 +128,15 @@
             $im1 = imagecreatetruecolor($neww, $newh);
             imagecopyresampled($im1, $im, 0, 0, 0, 0, $neww, $newh, imagesx($im), imagesy($im));
 
-            imagejpeg($im1, $outfile, $quality);
+            if ($ext == 'png') {
+                imagepng($im1, $outfile);
+            }
+            elseif ($ext == 'gif') {
+                imagegif($im1, $outfile);
+            } else {
+                imagejpeg($im1, $outfile, $quality);
+            }
+            
             imagedestroy($im);
             imagedestroy($im1);
         }
@@ -140,26 +166,30 @@
             //brand
             $sql = "SELECT manufacturer_id FROM wle_jshopping_manufacturers WHERE `name_ru-RU`='{$product->brand}'";
             $manufacturer_id = $db->fetchOne($sql);
-            if (!$manufacturer_id) {
-                $insert = array(
-                    'manufacturer_publish' => 1,
-                    'ordering' => 1,
-                    'products_page' => 12,
-                    'products_row' => 3,
-                    'name_ru-RU' => $product->brand
-                );
-                $manufacturer_id = $db->insert('wle_jshopping_manufacturers', $insert);
-            }
+//            if (!$manufacturer_id) {
+//                $insert = array(
+//                    'manufacturer_publish' => 1,
+//                    'ordering' => 1,
+//                    'products_page' => 12,
+//                    'products_row' => 3,
+//                    'name_ru-RU' => $product->brand
+//                );
+//                $manufacturer_id = $db->insert('wle_jshopping_manufacturers', $insert);
+//            }
 
             //product
             $sql = "SELECT product_id FROM wle_jshopping_products WHERE `name_ru-RU`='{$product->name}'";
             $product_id = $db->fetchOne($sql);
+            if ($product_id) {
+                echo 'существует <br/>';
+                return;
+            }
             if (!$product_id) {
                 $insert = array(
                     'parent_id' => 0,
                     'product_quantity' => 1,
                     'product_date_added' => date("Y-m-d H:i:s"),
-                    'product_publish' => 1,
+                    'product_publish' => 0,
                     'product_tax_id' => 1,
                     'currency_id' => 2,
                     'product_template' => 'default',
@@ -231,18 +261,19 @@
                 //param_group
                 $sql = "SELECT id FROM wle_jshopping_products_extra_field_groups WHERE `name_ru-RU`='{$group['name']}'";
                 $group_id = $db->fetchOne($sql);
-                if (!$group_id) {
-                    $insert = array(
-                        'ordering' => 1,
-                        'name_ru-RU' => $group['name']
-                    );
-                    $group_id = $db->insert('wle_jshopping_products_extra_field_groups', $insert);
-                }
+//                if (!$group_id) {
+//                    $insert = array(
+//                        'ordering' => 1,
+//                        'name_ru-RU' => $group['name']
+//                    );
+//                    $group_id = $db->insert('wle_jshopping_products_extra_field_groups', $insert);
+//                }
 
                 foreach ($group['params'] as $param) {
                     $sql = "SELECT id FROM wle_jshopping_products_extra_fields WHERE `name_ru-RU` LIKE '{$param['name']}%'";
                     $param_id = $db->fetchOne($sql);
                     if (!$param_id) {
+                        continue;
                         $cats = array($product->category_id);
                         $cats = serialize($cats);
                         $insert = array(
@@ -326,28 +357,44 @@
         }
 
         require_once(dirname(__FILE__) . '/mysql.class.php');
-//        require_once(dirname(__FILE__) . '/curl.class.php');
+        require_once(dirname(__FILE__) . '/curl.class.php');
         require_once(dirname(__FILE__) . '/../configuration.php');
         $jconf = new jConfig();
         $db = new mysqldb($jconf->db, $jconf->host, $jconf->user, $jconf->password, $jconf->dbprefix);
         $res = $db->query("SET NAMES utf8");
 
-//        $curl = new Curl();
+        $curl = new Curl(); 
 
 
-        $sql = "SELECT * FROM wle_jshopping_products";
-        $products = $db->fetchAll($sql);
+//        $sql = "SELECT * FROM wle_jshopping_products";
+//        $products = $db->fetchAll($sql);
 //        foreach ($products as $product) {
 //            if ( $product['product_price'] > 1000000  ) {
 //                echo $product['product_price'] . ' ' . $product['name_ru-RU'] . "<Br/>\n";
 //                $db->update('wle_jshopping_products', array('product_price' => str_replace('.', ',', (float)$product['product_price']/100)), 'product_id='.$product['product_id']);
 //            }
 //        }
-        exit;
+//        exit;
 
 //        $url = 'http://pechiikamini.ru/g247686-pechi-kaminy';
-        $url = 'http://dev1.wwwlab.biz/proxy.php?url=' . $_REQUEST['url'];
-        getProductsLinks($url);
+//        $url = 'http://pechspb.ru/proxy.php?url=' . $_REQUEST['url'];
+        $urls = file(dirname(__FILE__).'/data.txt');
+//        $url = $_REQUEST['url'];
+//        echo $urls[0];
+//        echo $curl->get('http://pechiikamini.ru/check_captcha.php', array('recaptcha_response_field'=>310));exit;
+//        $curl->setOpt(CURLOPT_HTTPPROXYTUNNEL, 0);
+//        $curl->setOpt(CURLOPT_USERAGENT, "Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1.7) Gecko/20070914 Firefox/2.0.0.7");
+//        $curl->setOpt(CURLOPT_PROXY, '194.44.193.49:8080');
+        
+//        $curl->setOpt(CURLOPT_FOLLOWLOCATION, 1);
+//        $curl->setOpt(CURLOPT_RETURNTRANSFER, 0);
+//        echo $curl->get('http://internet.yandex.ru/');exit;
+//        echo $curl->get($urls[0]);
+//        exit;
+        if ($urls[0]) {
+            echo $urls[0];
+            getProductsLinks(trim($urls[0]));
+        }
         ?>
 
     </body>

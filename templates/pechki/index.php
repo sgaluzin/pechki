@@ -85,7 +85,15 @@ else
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $this->language; ?>" lang="<?php echo $this->language; ?>" dir="<?php echo $this->direction; ?>">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta id="myViewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<script>
+window.onload = function () {
+    if(screen.width <= 740) {
+        var mvp = document.getElementById('myViewport');
+        mvp.setAttribute('content','width=740');
+    }
+}
+</script>
 	<jdoc:include type="head" /> 
 	<?php // Use of Google Font ?>
 	<?php if ($this->params->get('googleFont')) : ?>

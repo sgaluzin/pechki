@@ -62,7 +62,7 @@ defined('_JEXEC') or die('Restricted access');
         <? endif; ?>
     </td>
     <td class="size">
-        <?= (int) $product_obj->extra_field_46 . 'x' . (int) $product_obj->extra_field_44 . 'x' . (int) $product_obj->extra_field_45; ?>
+        <?= (int) $product_obj->extra_field_46 . ' x ' . (int) $product_obj->extra_field_44 . ' x ' . (int) $product_obj->extra_field_45; ?>
     </td>
     <td class="price">
         <?php if ($product->_display_price) { ?>

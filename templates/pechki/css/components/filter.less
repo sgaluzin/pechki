@@ -1,32 +1,60 @@
 .filter{
   position: relative;
   margin: 10px 0;
-  padding: 10px 100px 16px 10px;
+  border: 1px solid #c2b59b;
+  background: #f5f0e5;
   .border(@border-clr);
   background: #f5f0e5;
-  .button-primary{
-    position: absolute;
-    right: 20px;
-    bottom: 20px;
+  .button-primary {
+    margin: 15px 10px;
+    padding: .28em 1em .30em;
+    font-size: 110%;
+  }
+  @media all and (max-width: 920px) {
+    .sf_form{
+      margin-bottom: 10px;
+    }
+    .button-primary {
+      float: right;
+      margin: 30px 10px 0;
+    }
   }
 }
+
 .sf_block{
-  margin: 10px;
-  padding: 0;
+  width: 100%;
+  margin: 0;
+  padding: 10px 10px 5px;
   border: none;
   display: inline-block;
+  @media all and (max-width: 920px) {
+    width: 33.33%;
+  }
+  .box-sizing;
   .sf_block_title{
     font-weight: 600;
     margin-bottom: 6px;
+    line-height: 16px;
     color: #463e3a;
-
   }
   .sf_text{
     padding: 0 8px 0 6px;
   }
-  select{
-    min-width: 100px;
+  select {
+    width: 100%;
   }
+}
+.sf_price_wrap input[type="text"]{
+  width: 45px;
+  @media all and (max-width: 1060px) {
+    width: 20%;
+  }
+  @media all and (max-width: 920px) {
+    width: 28%;
+  }
+  @media all and (max-width: 760px) {
+  width: 61px;
+}
 }
 
 .label-wrap{

@@ -143,7 +143,6 @@ window.onload = function () {
                                 </div>
                             </div>
                         </div>
-                        <jdoc:include type="modules" name="filter" style="no" />
                         </div>
                     </header>
                     <?php endif; ?>
@@ -166,7 +165,7 @@ window.onload = function () {
 	<footer class="footer-main" role="contentinfo">
         <?php include_once($components_url.'footer.php'); ?>
 	</footer>
-	<jdoc:include type="modules" name="debug" style="none" /> 
+	<jdoc:include type="modules" name="debug" style="none" />
 
     <script type="text/javascript" charset="utf-8" src="/callme/js/callme.js"></script>
 </body>

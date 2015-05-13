@@ -55,7 +55,7 @@ JHtml::_('script', JURI::root().'modules/mod_jsfilter/assets/jsfilter.js' );
 	
 </script>
 
-<h1><?=JFactory::getDocument()->getTitle()?></h1>
+
 <div id="jsfilter_ajax_sample" style="display:none;">
 	<div class="">
 		<div class="loader">
@@ -79,8 +79,8 @@ JHtml::_('script', JURI::root().'modules/mod_jsfilter/assets/jsfilter.js' );
 </div>
 
 
-<div id="jsfilter_<?php echo $module->id; ?>" class="filter sf_wrapper">
-
+<div id="jsfilter_<?php echo $module->id; ?>" class="block filter sf_wrapper">
+	<h3 class="page-header">Фильтр поиска</h3>
 	<div class="sf_container<?php echo ( (int)$cfg['mod_direction'] ) ? ' sf_inline' : ''; ?>">
 
 		<form id="smart_filter_<?php echo $module->id; ?>" name="smart_filter_<?php echo $module->id; ?>" class="sf_form" action="<?php echo JURI::base(); ?>index.php?option=com_jshopping&controller=jsfilter" method="post" onsubmit="return sf_load(this);">

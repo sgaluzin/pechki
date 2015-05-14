@@ -1,12 +1,15 @@
 .grid-product{
   margin: 5px -10px 5px -5px;
 }
-.grid-product .custom{
-  width: 100%;
-  font-size: 0;
+.grid-product{
+  .group;
+  .custom{
+    width: 100%;
+    font-size: 0;
+  }
   .item-wrap{
-    width: 24.85%;
-    display: inline-block;
+    width: 25%;
+    float: left;
     .item{
       font-size: 1rem;
       margin: 5px;
@@ -72,6 +75,64 @@
         }
         .pure-button{
         }
+      }
+    }
+  }
+  &.category{
+    .item-wrap .item {
+      .header{
+        height: 55px;
+        overflow: hidden;
+        margin-bottom: 10px;
+        .title {
+          margin: .2em 0 .2em;
+          line-height: 1em;
+          color: #373330;
+        }
+      }
+      .bottom{
+        .group;
+        margin: 0 -12px -12px;
+        padding: 10px 12px;
+        .border-top(#c3b59b);
+        background: #f9f6ef;
+        .jshop_price{
+          float: left;
+          margin-top: 4px;
+          font-size: 1.1em;
+          font-weight: 600;
+        }
+        .button-primary{
+          float: right;
+          font-size: 90%;
+        }
+      }
+    }
+  }
+}
+.layout-trigger{
+  margin-bottom: 20px;
+  .link{
+    padding-right: 28px;
+    .label{
+      color: #373330;
+    }
+    &.current, &:hover{
+      .label{
+        text-decoration: underline;
+      }
+    }
+    .icon{
+      position: relative;
+      top: 3px;
+      display: inline-block;
+      width: 18px;
+      height: 18px;
+      margin-right: 8px;
+      background: url(../img/icon-list.png) no-repeat;
+      content: "";
+      &.icon-grid{
+        background: url(../img/icon-grid.png) no-repeat;
       }
     }
   }

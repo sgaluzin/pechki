@@ -27,7 +27,9 @@ class jshopCategory extends JTableAvto{
         if ($order=="ordering") $orderby = "ordering";
         if (!$orderby) $orderby = "ordering";
         
-        $query = "SELECT `".$lang->get('name')."` as name,`".$lang->get('description')."` as description,`".$lang->get('short_description')."` as short_description, category_id, category_publish, ordering, category_image FROM `#__jshopping_categories`
+        $query = "SELECT `".$lang->get('name')."` as name,`".$lang->get('description')."` as description,`".$lang->get('short_description')."` as short_description, category_id, category_publish, ordering, category_image,
+            (SELECT COUNT(*) FROM #__jshopping_products_to_categories pc WHERE pc.category_id=cat.category_id) as cnt
+                  FROM `#__jshopping_categories` cat
                    WHERE category_parent_id = '".$this->_db->escape($parentId)."' ".$add_where."
                    ORDER BY ".$orderby." ".$ordering;
         $this->_db->setQuery($query);

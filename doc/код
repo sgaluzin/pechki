@@ -1,0 +1,25 @@
+вывел, изменения в класс контроллера components\com_jshopping\tables\category.php, нужно будет менять функцию function getSubCategories
+[17:11:17] sgaluzin: на
+[17:11:18] sgaluzin: function getSubCategories($parentId, $order = 'id', $ordering = 'asc', $publish = 0) {
+        $lang = JSFactory::getLang();
+        $user = JFactory::getUser();
+        $add_where = ($publish)?(" AND category_publish = '1' "):("");
+        $groups = implode(',', $user->getAuthorisedViewLevels());
+        $add_where .=' AND access IN ('.$groups.')';
+        if ($order=="id") $orderby = "category_id";
+        if ($order=="name") $orderby = "`".$lang->get('name')."`";
+        if ($order=="ordering") $orderby = "ordering";
+        if (!$orderby) $orderby = "ordering";
+        
+        $query = "SELECT `".$lang->get('name')."` as name,`".$lang->get('description')."` as description,`".$lang->get('short_description')."` as short_description, category_id, category_publish, ordering, category_image,
+            (SELECT COUNT(*) FROM #__jshopping_products_to_categories pc WHERE pc.category_id=cat.category_id) as cnt
+                  FROM `#__jshopping_categories` cat
+                   WHERE category_parent_id = '".$this->_db->escape($parentId)."' ".$add_where."
+                   ORDER BY ".$orderby." ".$ordering;
+        $this->_db->setQuery($query);
+        $categories = $this->_db->loadObjectList();
+        foreach($categories as $key=>$value){
+            $categories[$key]->category_link = SEFLink('index.php?option=com_jshopping&controller=category&task=view&category_id='.$categories[$key]->category_id, 1);
+        }        
+        return $categories;
+    }

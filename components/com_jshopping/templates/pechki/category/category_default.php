@@ -25,6 +25,9 @@ defined('_JEXEC') or die('Restricted access');
             <td>
                <a class = "product_link" href = "<?php print $category->category_link?>"><?php print $category->name?></a>
                <p class = "category_short_description"><?php print $category->short_description?></p>
+               <p>
+                   (<?php print $category->cnt?>)
+               </p>
             </td>
             </tr>
            </table>

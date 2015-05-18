@@ -1,9 +1,9 @@
 <?php
 /*
- * default.php
- *
+ * backup.php
+ * 
  * Copyright 2013 Bass <support@joomshopping.pro>
- *
+ * 
  */
 
 // no direct access
@@ -28,10 +28,9 @@ JHtml::_('script', JURI::root().'modules/mod_jsfilter/assets/jsfilter.js' );
 	echo "MJSF_STRINGS = {};\n";
 	echo "MJSF_STRINGS.selectAll = '".JText::_('MJSF_SELECT_ALL')."'\n";
 	echo "MJSF_STRINGS.allSelected = '".JText::_('MJSF_ALL_SELECTED')."'\n";
-	echo "MJSF_STRINGS.countSelected = '".JText::_('MJSF_COUNT_SELECTED')."'\n";
 	echo "MJSF_STRINGS.multicheckPlaceholder = '".JText::_('MJSF_MULTICHECK_PLACEHOLDER')."'\n";
 	?>
-
+	
 	jQuery(document).ready(function() {
 		// Инициализация модуля
 		sf_init('<?php echo $module->id; ?>');
@@ -54,7 +53,7 @@ JHtml::_('script', JURI::root().'modules/mod_jsfilter/assets/jsfilter.js' );
 		}
 		?>
 	});
-
+	
 </script>
 
 
@@ -95,11 +94,11 @@ JHtml::_('script', JURI::root().'modules/mod_jsfilter/assets/jsfilter.js' );
 		?>
 
 		<form id="smart_filter_<?php echo $module->id; ?>" name="smart_filter_<?php echo $module->id; ?>" class="sf_form" action="<?php echo JURI::base(); ?>index.php?option=com_jshopping&controller=jsfilter" method="post" onsubmit="return sf_load(this);">
-
+			
 			<?php echo $html; ?>
 
 			<?php if (!isset($cfg['show_buttons']) || $cfg['show_buttons']) { ?>
-			<div class="sf_buttons">
+			<div class="sf_buttons">		
 				<input type="submit" value="Показать" class="sf_submit" />
 				<input type="reset" value="Сбросить" class="sf_reset" />
 			</div>

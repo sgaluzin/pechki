@@ -9,6 +9,43 @@
 defined('_JEXEC') or die('Restricted access');
 ?>
 <?php print $product->_tmp_var_start ?>
+<?if ($_GET["layout"]=='grid'){?>
+    <div class="item-wrap">
+        <div class="item">
+            <div class="top-row"></div>
+            <header class="header">
+                <p class="title"><?=$product->name?></p>
+            </header>
+            <div class="thumb">
+                <?php if ($product->image) { ?>
+                    <?php print $product->_tmp_var_image_block; ?>
+                    <?php if ($product->label_id) { ?>
+                        <div class="product_label">
+                            <?php if ($product->_label_image) { ?>
+                                <img src="<?php print $product->_label_image ?>" alt="<?php print htmlspecialchars($product->_label_name) ?>" />
+                            <?php } else { ?>
+                                <span class="label_name"><?php print $product->_label_name; ?></span>
+                            <?php } ?>
+                        </div>
+                    <?php } ?>
+                    <a href="<?php print $product->product_link ?>">
+                        <img class="jshop_img" src="<?php print $product->image ?>" alt="<?php print htmlspecialchars($product->name); ?>" title="<?php print htmlspecialchars($product->name); ?>" />
+                    </a>
+                <?php } ?>
+            </div>
+            <div class="bottom">
+                <?php if ($product->_display_price) { ?>
+                    <div class = "jshop_price">
+                        <?php if ($this->config->product_list_show_price_description) print _JSHOP_PRICE . ": "; ?>
+                        <?php if ($product->show_price_from) print _JSHOP_FROM . " "; ?>
+                        <span><?php print formatprice($product->product_price); ?><?php print $product->_tmp_var_price_ext; ?></span>
+                    </div>
+                <?php } ?>
+                <a href="<?php print $product->product_link ?>"><div class="pure-button button-primary">Подробнее</div></a>
+            </div>
+        </div>
+    </div>
+<?} else {?>
 <tr>
     <td class="photo">
         <?php if ($product->image) { ?>
@@ -77,5 +114,6 @@ defined('_JEXEC') or die('Restricted access');
         <a href="<?php print $product->product_link ?>"><div class="pure-button button-primary">Подробнее</div></a>
     </td>
 </tr>
+<?}?>
 <?php
 print $product->_tmp_var_end?>

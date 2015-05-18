@@ -50,7 +50,7 @@ $product = $this->product;
             <p class="desc">
                 <?php
                 /*short description*/
-                /* print $this->product->description; */
+                print $this->product->short_description;
                 ?>
             </p>
             <h3>Технические характеристики:</h3>

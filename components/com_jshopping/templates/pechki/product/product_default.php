@@ -73,9 +73,11 @@ $product = $this->product;
             <?php }?>
         </div>
     </div>
+    <? if ($this->product->short_description): ?>
     <div class="text">
         <?php print $this->product->description; ?>
     </div>
+    <? endif; ?>
 
 <input type="hidden" name="to" id='to' value="cart" />
 <input type="hidden" name="product_id" id="product_id" value="<?php print $this->product->product_id?>" />

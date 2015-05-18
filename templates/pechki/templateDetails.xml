@@ -53,6 +53,7 @@
         <position>search-top</position>
         <position>slider</position>
         <position>after-component</position>
+        <position>before-component</position>
         <position>discount</position>
         <position>social-top</position>
         <position>social-page-top</position>

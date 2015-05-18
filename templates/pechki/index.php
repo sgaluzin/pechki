@@ -154,6 +154,7 @@ window.onload = function () {
                             <jdoc:include type="modules" name="discount" style="no" />
                         </div>
                         <jdoc:include type="message" />
+                        <jdoc:include type="modules" name="before-component" style="well" />
                         <jdoc:include type="component" />
                         <jdoc:include type="modules" name="after-component" style="well" />
                         <!-- End Content -->

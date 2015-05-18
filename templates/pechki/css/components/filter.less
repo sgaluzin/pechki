@@ -5,18 +5,34 @@
   background: #f5f0e5;
   .border(@border-clr);
   background: #f5f0e5;
-  .button-primary {
+  .group;
+  .pure-button{
     margin: 15px 10px;
-    padding: .28em 1em .30em;
+    padding: .28em .95em .30em;
     font-size: 110%;
+    &.button-primary{
+      margin-left: -4px;
+      float: right;
+    }
   }
+  @media all and (max-width: 1040px){
+    .pure-button {
+      font-size: 93%;
+    }
+  }
+
   @media all and (max-width: 920px) {
     .sf_form{
       margin-bottom: 10px;
+      .group;
     }
-    .button-primary {
+    .pure-button {
       float: right;
       margin: 30px 10px 0;
+      font-size: 110%;
+      &.button-primary{
+        margin-left: 2px
+      }
     }
   }
 }

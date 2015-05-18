@@ -88,8 +88,10 @@ JHtml::_('script', JURI::root().'modules/mod_jsfilter/assets/jsfilter.js' );
 			<?php echo $html; ?>
 
 			<?php if (!isset($cfg['show_buttons']) || $cfg['show_buttons']) { ?>
-				<input type="submit" value="Искать" class="pure-button button-primary" />
-			<?php } ?>
+                <input type="submit" value="Искать" class="pure-button button-primary" />
+                <input type="reset" value="Сбросить" class="pure-button button-default sf_reset" />
+
+            <?php } ?>
 			<input id="sf_orderby" type="hidden" name="sf_orderby" value="" />
 			<input id="sf_order" type="hidden" name="sf_order" value="" />
 			<input id="mid" type="hidden" name="mid" value="<?php echo $module->id; ?>" />

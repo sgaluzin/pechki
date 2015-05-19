@@ -17,6 +17,9 @@ if(isset($_GET) && !empty($_GET) && count($_GET)>1){
 }
 
 ?>
+<?if (!($_GET["option"]=='com_jshopping'
+    && $_GET["controller"]=='jsfilter'
+    && $_GET["task"]=='request')) { ?>
 <div class="layout-trigger">
     <a href="<?=$url_without_layout_param?>layout=list" class="link<?=($_GET["layout"]!='grid')? ' current' : ''?>">
         <i class="icon icon-list"></i>
@@ -27,6 +30,7 @@ if(isset($_GET) && !empty($_GET) && count($_GET)>1){
         <span class="label">В виде галереи</span>
     </a>
 </div>
+   <?} ?>
 <?if ($_GET["layout"]=='grid'){?>
 <div class="grid-product category">
     <?php foreach ($this->rows as $k=>$product){?>

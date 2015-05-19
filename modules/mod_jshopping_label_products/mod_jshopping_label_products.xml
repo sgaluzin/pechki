@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="1.6.0" client="site" method="upgrade">
+<name>Jshopping Label Products</name> 
+	<creationDate>20.10.2014</creationDate>
+    <author>MAXXmarketing GmbH</author>
+    <authorEmail>marketing@maxx-marketing.net</authorEmail>
+    <authorUrl>http://www.webdesigner-profi.de</authorUrl>
+    <copyright></copyright>
+    <license>Open Source License, GNU GPL</license>
+    <version>4.0.4</version>
+	<description>Displays label products of shop.</description>
+	<files>
+	<filename module="mod_jshopping_label_products">mod_jshopping_label_products.php</filename>
+        <filename>helper.php</filename>
+        <filename>tmpl/default.php</filename>
+        <filename>element/labels.php</filename>
+	</files>
+    <languages>
+        <language
+            tag="en-GB">lang/en-GB.mod_jshopping_label_products.ini</language>
+		<language
+            tag="de-DE">lang/de-DE.mod_jshopping_label_products.ini</language>
+		<language
+            tag="ru-RU">lang/ru-RU.mod_jshopping_label_products.ini</language>
+    </languages>     
+    <config>
+        <fields name="params">
+            <fieldset name="basic">  
+                <field
+                    name="count_products"
+                    type="text"
+                    label="COUNT"
+                    default = "5"
+                    description="THE NUMBER OF PRODUCTS IN ROW" />
+               
+                <field  
+                    name="label_id" 
+                    type="labels" 
+                    size="5" 
+                    default=""                    
+                    label="LABEL" 
+                    description="LABEL" 
+                    addfieldpath="/modules/mod_jshopping_label_products/element"/>
+				
+				<field
+                    name="enable_addon"
+                    type="radio" class="btn-group btn-group-yesno"
+                    default="1"
+                    label="MOD_JSHOPPING_LABEL_PRODUCT_ENABLE_ADDON"
+                    description="">
+                    <option
+                        value="0">JNO</option>
+                    <option
+                        value="1">JYES</option>
+                </field>
+				
+            </fieldset>
+			
+			<fieldset name="SHOW">
+				<field
+                    name="show_image"
+                    type="radio" class="btn-group btn-group-yesno"
+                    default="1"
+                    label="MOD_JSHOPPING_LABEL_PRODUCT_SHOW_IMAGES"
+                    description="">
+                    <option
+                        value="0">MOD_JSHOPPING_LABEL_PRODUCT_HIDE</option>
+                    <option
+                        value="1">MOD_JSHOPPING_LABEL_PRODUCT_SHOW</option>
+                </field>
+				
+				<field
+                    name="show_image_label"
+                    type="radio" class="btn-group btn-group-yesno"
+                    default="0"
+                    label="MOD_JSHOPPING_LABEL_PRODUCT_SHOW_IMAGES_LABEL"
+                    description="">
+                    <option
+                        value="0">MOD_JSHOPPING_LABEL_PRODUCT_HIDE</option>
+                    <option
+                        value="1">MOD_JSHOPPING_LABEL_PRODUCT_SHOW</option>
+                </field>
+				
+				<field
+                    name="allow_review"
+                    type="radio" class="btn-group btn-group-yesno"
+                    default="0"
+                    label="MOD_JSHOPPING_LABEL_PRODUCT_ALLOW_REVIEW"
+                    description="">
+                    <option
+                        value="0">MOD_JSHOPPING_LABEL_PRODUCT_HIDE</option>
+                    <option
+                        value="1">MOD_JSHOPPING_LABEL_PRODUCT_SHOW</option>
+                </field>
+				
+				<field
+                    name="short_description"
+                    type="radio" class="btn-group btn-group-yesno"
+                    default="0"
+                    label="MOD_JSHOPPING_LABEL_PRODUCT_SHORT_DESCRIPTION"
+                    description="">
+                    <option
+                        value="0">MOD_JSHOPPING_LABEL_PRODUCT_HIDE</option>
+                    <option
+                        value="1">MOD_JSHOPPING_LABEL_PRODUCT_SHOW</option>
+                </field>
+				
+				<field
+                    name="manufacturer_name"
+                    type="radio" class="btn-group btn-group-yesno"
+                    default="0"
+                    label="MOD_JSHOPPING_LABEL_PRODUCT_MANUFACTURER_NAME"
+                    description="">
+                    <option
+                        value="0">MOD_JSHOPPING_LABEL_PRODUCT_HIDE</option>
+                    <option
+                        value="1">MOD_JSHOPPING_LABEL_PRODUCT_SHOW</option>
+                </field>
+				
+				<field
+                    name="product_quantity"
+                    type="radio" class="btn-group btn-group-yesno"
+                    default="0"
+                    label="MOD_JSHOPPING_LABEL_PRODUCT_PRODUCT_QUANTITY"
+                    description="">
+                    <option
+                        value="0">MOD_JSHOPPING_LABEL_PRODUCT_HIDE</option>
+                    <option
+                        value="1">MOD_JSHOPPING_LABEL_PRODUCT_SHOW</option>
+                </field>
+				
+				<field
+                    name="product_old_price"
+                    type="radio" class="btn-group btn-group-yesno"
+                    default="0"
+                    label="MOD_JSHOPPING_LABEL_PRODUCT_PRODUCT_OLD_PRICE"
+                    description="">
+                    <option
+                        value="0">MOD_JSHOPPING_LABEL_PRODUCT_HIDE</option>
+                    <option
+                        value="1">MOD_JSHOPPING_LABEL_PRODUCT_SHOW</option>
+                </field>
+				
+				<field
+                    name="product_price_default"
+                    type="radio" class="btn-group btn-group-yesno"
+                    default="0"
+                    label="MOD_JSHOPPING_LABEL_PRODUCT_PRODUCT_PRICE_DEFAULT"
+                    description="">
+                    <option
+                        value="0">MOD_JSHOPPING_LABEL_PRODUCT_HIDE</option>
+                    <option
+                        value="1">MOD_JSHOPPING_LABEL_PRODUCT_SHOW</option>
+                </field>
+				
+				<field
+                    name="display_price"
+                    type="radio" class="btn-group btn-group-yesno"
+                    default="1"
+                    label="MOD_JSHOPPING_LABEL_PRODUCT_DISPLAY_PRICE"
+                    description="">
+                    <option
+                        value="0">MOD_JSHOPPING_LABEL_PRODUCT_HIDE</option>
+                    <option
+                        value="1">MOD_JSHOPPING_LABEL_PRODUCT_SHOW</option>
+                </field>
+				
+				<field
+                    name="show_tax_product"
+                    type="radio" class="btn-group btn-group-yesno"
+                    default="0"
+                    label="MOD_JSHOPPING_LABEL_PRODUCT_SHOW_TAX_PRODUCT"
+                    description="">
+                    <option
+                        value="0">MOD_JSHOPPING_LABEL_PRODUCT_HIDE</option>
+                    <option
+                        value="1">MOD_JSHOPPING_LABEL_PRODUCT_SHOW</option>
+                </field>
+				
+				<field
+                    name="show_plus_shipping_in_product"
+                    type="radio" class="btn-group btn-group-yesno"
+                    default="0"
+                    label="MOD_JSHOPPING_LABEL_PRODUCT_SHOW_PLUS_SHIPING_PRODUCT"
+                    description="">
+                    <option
+                        value="0">MOD_JSHOPPING_LABEL_PRODUCT_HIDE</option>
+                    <option
+                        value="1">MOD_JSHOPPING_LABEL_PRODUCT_SHOW</option>
+                </field>
+				
+				<field
+                    name="basic_price_info"
+                    type="radio" class="btn-group btn-group-yesno"
+                    default="0"
+                    label="MOD_JSHOPPING_LABEL_PRODUCT_BASIC_PRICE_INFO"
+                    description="">
+                    <option
+                        value="0">MOD_JSHOPPING_LABEL_PRODUCT_HIDE</option>
+                    <option
+                        value="1">MOD_JSHOPPING_LABEL_PRODUCT_SHOW</option>
+                </field>
+				
+				<field
+                    name="product_weight"
+                    type="radio" class="btn-group btn-group-yesno"
+                    default="0"
+                    label="MOD_JSHOPPING_LABEL_PRODUCT_PRODUCT_WEIGHT"
+                    description="">
+                    <option
+                        value="0">MOD_JSHOPPING_LABEL_PRODUCT_HIDE</option>
+                    <option
+                        value="1">MOD_JSHOPPING_LABEL_PRODUCT_SHOW</option>
+                </field>
+				
+				<field
+                    name="delivery_time"
+                    type="radio" class="btn-group btn-group-yesno"
+                    default="0"
+                    label="MOD_JSHOPPING_LABEL_PRODUCT_DELIVERY_TIME"
+                    description="">
+                    <option
+                        value="0">MOD_JSHOPPING_LABEL_PRODUCT_HIDE</option>
+                    <option
+                        value="1">MOD_JSHOPPING_LABEL_PRODUCT_SHOW</option>
+                </field>
+				
+				<field
+                    name="extra_field"
+                    type="radio" class="btn-group btn-group-yesno"
+                    default="0"
+                    label="MOD_JSHOPPING_LABEL_PRODUCT_EXTRA_FIELD"
+                    description="">
+                    <option
+                        value="0">MOD_JSHOPPING_LABEL_PRODUCT_HIDE</option>
+                    <option
+                        value="1">MOD_JSHOPPING_LABEL_PRODUCT_SHOW</option>
+                </field>
+				
+				<field
+                    name="vendor"
+                    type="radio" class="btn-group btn-group-yesno"
+                    default="0"
+                    label="MOD_JSHOPPING_LABEL_PRODUCT_VENDOR"
+                    description="">
+                    <option
+                        value="0">MOD_JSHOPPING_LABEL_PRODUCT_HIDE</option>
+                    <option
+                        value="1">MOD_JSHOPPING_LABEL_PRODUCT_SHOW</option>
+                </field>
+				
+				<field
+                    name="product_list_qty_stock"
+                    type="radio" class="btn-group btn-group-yesno"
+                    default="0"
+                    label="MOD_JSHOPPING_LABEL_PRODUCT_PRODUCT_LIST_QTY_STOCK"
+                    description="">
+                    <option
+                        value="0">MOD_JSHOPPING_LABEL_PRODUCT_HIDE</option>
+                    <option
+                        value="1">MOD_JSHOPPING_LABEL_PRODUCT_SHOW</option>
+                </field>
+				
+				<field
+                    name="show_button"
+                    type="radio" class="btn-group btn-group-yesno"
+                    default="1"
+                    label="MOD_JSHOPPING_LABEL_PRODUCT_SHOW_BUTTON"
+                    description="">
+                    <option
+                        value="0">MOD_JSHOPPING_LABEL_PRODUCT_HIDE</option>
+                    <option
+                        value="1">MOD_JSHOPPING_LABEL_PRODUCT_SHOW</option>
+                </field>
+				
+				<field
+                    name="show_button_buy"
+                    type="radio" class="btn-group btn-group-yesno"
+                    default="0"
+                    label="MOD_JSHOPPING_LABEL_PRODUCT_SHOW_BUTTON_BUY"
+                    description="">
+                    <option
+                        value="0">MOD_JSHOPPING_LABEL_PRODUCT_HIDE</option>
+                    <option
+                        value="1">MOD_JSHOPPING_LABEL_PRODUCT_SHOW</option>
+                </field>
+				
+				<field
+                    name="show_button_detal"
+                    type="radio" class="btn-group btn-group-yesno"
+                    default="1"
+                    label="MOD_JSHOPPING_LABEL_PRODUCT_SHOW_BUTTON_DETAL"
+                    description="">
+                    <option
+                        value="0">MOD_JSHOPPING_LABEL_PRODUCT_HIDE</option>
+                    <option
+                        value="1">MOD_JSHOPPING_LABEL_PRODUCT_SHOW</option>
+                </field>
+				
+			</fieldset>
+			<fieldset name="advanced">
+				<field
+					name="layout"
+					type="modulelayout"
+					label="JFIELD_ALT_LAYOUT_LABEL"
+					description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+
+				<field
+					name="moduleclass_sfx"
+					type="textarea" rows="3"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+
+				<field
+					name="cache"
+					type="list"
+					default="1"
+					label="COM_MODULES_FIELD_CACHING_LABEL"
+					description="COM_MODULES_FIELD_CACHING_DESC">
+					<option
+						value="1">JGLOBAL_USE_GLOBAL</option>
+					<option
+						value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+				<field
+					name="cache_time"
+					type="text"
+					default="900"
+					label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+					description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+				<field
+					name="cachemode"
+					type="hidden"
+					default="itemid">
+					<option
+						value="itemid"></option>
+				</field>
+			</fieldset>
+        </fields>
+    </config>      
+</extension>

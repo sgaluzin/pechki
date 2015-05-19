@@ -69,7 +69,7 @@ defined('_JEXEC') or die('Restricted access');
     </td>
     <td class="model">
         <span class="top"></span>
-        <span class="title"><?= $product->name ?></span>
+        <a href="<?php print $product->product_link ?>"><span class="title"><?= $product->name ?></span></a>
 
         <div class="bottom">
             <div class="rating r-<?= (int) $product->average_rating ?>">

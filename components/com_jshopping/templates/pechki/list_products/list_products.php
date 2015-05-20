@@ -31,7 +31,7 @@ if(isset($_GET) && !empty($_GET) && count($_GET)>1){
     </a>
 </div>
    <?} ?>
-<?if ($_GET["layout"]=='grid'){?>
+<?if ($_GET["layout"]=='grid' || $_GET['layout'] == null){?>
 <div class="grid-product category">
     <?php foreach ($this->rows as $k=>$product){?>
         <?php include(dirname(__FILE__)."/".$product->template_block_product);?>

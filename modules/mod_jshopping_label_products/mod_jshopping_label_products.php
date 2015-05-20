@@ -40,6 +40,7 @@
     
     foreach ($rows as &$row) {
         $product->load($row->product_id);
+        $row->extra_str = '';
         foreach ($product->getExtraFields(1) as $extra_fields) {
             $row->extra_str = '';
             if ($extra_fields['id'] == 266) {

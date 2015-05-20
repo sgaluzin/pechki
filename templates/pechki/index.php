@@ -150,9 +150,7 @@ window.onload = function () {
                     <jdoc:include type="modules" name="banner" style="xhtml" />
                         <!-- Begin Content -->
                         <jdoc:include type="modules" name="slider" style="no" />
-                        <div class="grid-product">
-                            <jdoc:include type="modules" name="discount" style="no" />
-                        </div>
+                        <jdoc:include type="modules" name="discount" style="no" />
                         <jdoc:include type="message" />
                         <jdoc:include type="modules" name="before-component" style="well" />
                         <jdoc:include type="component" />

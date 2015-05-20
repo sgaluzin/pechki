@@ -1,13 +1,14 @@
 <div class="grid-product discount">
 
 <?php foreach($rows as $product){ ?>
+
 	 <div class="item-wrap">
 	 	<div class="item">
 			<header class="header">
-				<div class="title">
+				<p class="title">
 					<?php print $product->name?>
-					<?php if ($jshopConfig->product_list_show_product_code){?><span class="jshop_code_prod">(<?php print _JSHOP_EAN?>: <span><?php print $product->product_ean;?></span>)</span><?php }?>
-				</div>
+				</p>
+				<p class="sub-title"><?php print $product->extra_str?></p>
 			</header>
 <?php 	if ($show_image && $product->image){// option modul  show_image ?>
 		<div class="thumb">

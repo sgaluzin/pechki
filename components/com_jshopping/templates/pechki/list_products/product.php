@@ -15,6 +15,7 @@ defined('_JEXEC') or die('Restricted access');
             <div class="top-row"></div>
             <header class="header">
                 <p class="title"><?=$product->name?></p>
+                <p class="sub-title"><?php print $product->extra_str?></p>
             </header>
             <div class="thumb">
                 <?php if ($product->image) { ?>

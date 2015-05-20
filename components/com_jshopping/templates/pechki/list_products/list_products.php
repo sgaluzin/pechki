@@ -21,13 +21,13 @@ if(isset($_GET) && !empty($_GET) && count($_GET)>1){
     && $_GET["controller"]=='jsfilter'
     && $_GET["task"]=='request')) { ?>
 <div class="layout-trigger">
-    <a href="<?=$url_without_layout_param?>layout=list" class="link<?=($_GET["layout"]!='grid')? ' current' : ''?>">
-        <i class="icon icon-list"></i>
-        <span class="label">В виде списка</span>
-    </a>
-    <a href="<?=$url_without_layout_param?>layout=grid" class="link<?=($_GET["layout"]=='grid')? ' current' : ''?>">
+    <a href="<?=$url_without_layout_param?>layout=grid" class="link<?=(($_GET["layout"]=='grid' || $_GET['layout'] == null))? ' current' : ''?>">
         <i class="icon icon-grid"></i>
         <span class="label">В виде галереи</span>
+    </a>
+    <a href="<?=$url_without_layout_param?>layout=list" class="link<?=($_GET["layout"]=='list')? ' current' : ''?>">
+        <i class="icon icon-list"></i>
+        <span class="label">В виде списка</span>
     </a>
 </div>
    <?} ?>

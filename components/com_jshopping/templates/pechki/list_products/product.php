@@ -11,7 +11,7 @@ defined('_JEXEC') or die('Restricted access');
 $product_obj = JTable::getInstance('product', 'jshop');
 ?>
 <?php print $product->_tmp_var_start ?>
-<? if ($_GET["layout"] == 'grid' || $_GET["layout"] == null) { ?>
+<? if ($_GET["layout"] == 'grid') { ?>
     <div class="item-wrap">
         <div class="item">
             <div class="top-row"></div>

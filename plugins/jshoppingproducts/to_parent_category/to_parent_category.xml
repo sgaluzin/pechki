@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="2.5" type="plugin" method="upgrade" group="jshoppingproducts">
+	<name>JoomShopping - Products To Parent Category</name>
+	<author>Linfuby</author>
+	<creationDate>22.05.2014</creationDate>
+	<copyright>Copyright by Linfuby. All rights reserved.</copyright>
+	<license>http://opensource.org/licenses/mit-license.php The MIT License</license>
+	<authorEmail>support@dell3r.ru</authorEmail>
+	<authorUrl>http://dell3r.ru/</authorUrl>
+    <version>2.3</version>
+	<description>Products To Parent Category</description>
+	<files>
+		<filename plugin="to_parent_category">to_parent_category.php</filename>
+	</files>
+</extension>

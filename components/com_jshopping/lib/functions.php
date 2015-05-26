@@ -1120,9 +1120,9 @@ return $dir;
 
 function getImgSortDirection($fieldnum, $ordernum){
     if ($ordernum) {
-        $image = 'arrow_down.gif';
+        $image = 'arrow_down.png';
     } else {
-        $image = 'arrow_up.gif';
+        $image = 'arrow_up.png';
     }
 return $image;
 }

@@ -7,30 +7,9 @@
 * @license      GNU/GPL
 */
 defined('_JEXEC') or die('Restricted access');
-$uri = JFactory::getURI();
-$absolute_url = $uri->toString();
-$url_without_layout_param = preg_replace('/&?layout=[^&]*/', '', $absolute_url);
-if(isset($_GET) && !empty($_GET) && count($_GET)>1){
-    $url_without_layout_param .= '&';
-} else{
-    $url_without_layout_param .= '?';
-}
+
 
 ?>
-<?if (!($_GET["option"]=='com_jshopping'
-    && $_GET["controller"]=='jsfilter'
-    && $_GET["task"]=='request')) { ?>
-<div class="layout-trigger">
-    <a href="<?=$url_without_layout_param?>layout=grid" class="link<?=(($_GET["layout"]=='grid' || $_GET['layout'] == null))? ' current' : ''?>">
-        <i class="icon icon-grid"></i>
-        <span class="label">В виде галереи</span>
-    </a>
-    <a href="<?=$url_without_layout_param?>layout=list" class="link<?=($_GET["layout"]=='list')? ' current' : ''?>">
-        <i class="icon icon-list"></i>
-        <span class="label">В виде списка</span>
-    </a>
-</div>
-   <?} ?>
 <?if ($_GET["layout"]=='grid' || $_GET['layout'] == null){?>
 <div class="grid-product category">
     <?php foreach ($this->rows as $k=>$product){?>

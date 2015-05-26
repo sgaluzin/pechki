@@ -1237,6 +1237,7 @@ function disableElement(idElement){
 function submitListProductFilterSortDirection(){
     $_('orderby').value = $_('orderby').value ^ 1;
     submitListProductFilters();
+    $(this).toggleClass('up');
 }
 
 function submitListProductFilters(){

@@ -255,7 +255,7 @@ $prod = null;
                                                                           value=""/>
                         </label>
                     </div>
-                    <div class="row delivery">
+                    <div class="row delivery" style="display: none;">
                         <h3>Выберете способ доставки:</h3>
                         <label class="check-block">
                             <input type="radio" name="sh_pr_method_id" checked="checked" value="1"/>
@@ -287,15 +287,15 @@ $prod = null;
                             </label>
                             <label class="label-wrap">
                                 <span class="label required">Дом:</span>
-                                <input class="w1" type="text" required="required" name="d_apartment" value=""/>
+                                <input class="w1" type="text" required="required" name="d_home" value=""/>
                             </label>
                             <label class="label-wrap">
                                 <span class="label">Квартира</span>
-                                <input class="w1" type="text" name="d_home" value=""/>
+                                <input class="w1" type="text" name="d_apartment" value=""/>
                             </label>
                         </div>
                     </div>
-                    <div class="row delivery">
+                    <div class="row delivery" style="display: none;">
                         <h3>Выберете способ оплаты:</h3>
                         <label class="check-block">
                             <input type="radio" name="payment_method" checked="checked" value="pm_bank"/>

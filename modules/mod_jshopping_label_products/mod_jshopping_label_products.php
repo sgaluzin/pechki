@@ -83,6 +83,6 @@
 	$show_button = $params->get('show_button',1);
 	$show_button_buy = $params->get('show_button_buy',0);
 	$show_button_detal = $params->get('show_button_detal',1);
-	
+	addLinkToProducts($rows, 0, 1);
 	require(JModuleHelper::getLayoutPath('mod_jshopping_label_products',$layout));        
 ?>

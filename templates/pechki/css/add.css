@@ -9,3 +9,36 @@
     padding: 10px;
     background: rgb(251,134,81);
 }
+
+.grid-product .item-wrap .item .thumb {
+    /*height: 144px;*/
+    /*width: 184px;*/
+    min-height: 144px !important;
+}
+
+.grid-product .item-wrap .item .thumb img {
+    /*position: static;*/
+    /*margin-top: -10%;*/
+    /*transform: none;*/
+    /*max-height: none;*/
+}
+
+.item .header .sub-title {
+    display: none;
+}
+
+.grid-product.category .item-wrap .item .header, .grid-product.discount .item-wrap .item .header {
+    height: auto;
+}
+
+.grid-brand .item-wrap .item .info .count {
+    /*position: absolute;*/
+    /*margin-top: -60px;*/
+    /*margin-left: 135px;*/
+    display: inline;
+}
+
+.grid-brand .item-wrap .item .info .title {
+    display: inline;
+    
+}

